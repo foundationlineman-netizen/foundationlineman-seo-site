@@ -88,6 +88,20 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 .dropdown-menu a{padding:10px 14px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.08em;display:block}
 .dropdown-menu a:hover{background:#222;color:#c8a84b}
 .dropdown-menu.show{display:flex}
+
+#cart-bar{position:fixed;bottom:0;left:0;right:0;background:#0a0a0a;border-top:2px solid #c8a84b;z-index:500;display:none;align-items:center;justify-content:space-between;padding:14px 2rem;gap:16px}
+#cart-bar.visible{display:flex}
+#cart-summary{color:#fff;font-size:13px;font-weight:600;letter-spacing:.06em}
+#cart-summary span{color:#c8a84b}
+#cart-actions{display:flex;align-items:center;gap:12px}
+#discount-input{background:#1a1a1a;border:1px solid rgba(200,168,75,.3);color:#fff;padding:8px 12px;font-size:12px;font-family:'Inter',sans-serif;letter-spacing:.06em;width:140px;outline:none}
+#discount-input::placeholder{color:rgba(255,255,255,.3)}
+#checkout-btn{background:#c8a84b;color:#000;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:12px 24px;border:none;cursor:pointer;white-space:nowrap}
+#checkout-btn:hover{background:#e8c96a}
+#checkout-btn:disabled{opacity:.5;cursor:not-allowed}
+.add-to-cart{display:block;background:transparent;color:#c8a84b;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;border:1px solid #c8a84b;cursor:pointer;margin-top:12px;transition:background .2s,color .2s;width:100%;text-align:center}
+.add-to-cart:hover,.add-to-cart.added{background:#c8a84b;color:#000}
+@media(max-width:600px){#cart-bar{flex-direction:column;align-items:stretch}#cart-actions{flex-direction:column}#discount-input{width:100%}#checkout-btn{text-align:center}}
 </style>
 </head>
 <body>
@@ -125,6 +139,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
         </div>
         <p itemprop="description">The full solo training experience for the entire summer. Maximum one-on-one time with Coach James, tailored entirely to your development. Best option for serious athletes going all-in during the off-season.</p>
         <a class="btn-primary" href="https://www.foundationlineman.com/services-store/p/summer-bundle-group-sessions-5khje" target="_blank" rel="noopener">Get This Package</a>
+      <button class="add-to-cart" onclick="addToCart('summer-solo',this)">Add to Cart</button>
       </div>
     </article>
     <article class="service-card" itemscope itemtype="https://schema.org/Service">
@@ -138,6 +153,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
         </div>
         <p itemprop="description">The full summer group training package. Small groups of 4–5 athletes max — focused coaching and the competitive edge of training alongside other linemen. Perfect for athletes who thrive in a competitive group environment.</p>
         <a class="btn-primary" href="https://www.foundationlineman.com/services-store/p/summer-bundle-group-sessions" target="_blank" rel="noopener">Get This Package</a>
+      <button class="add-to-cart" onclick="addToCart('summer-group',this)">Add to Cart</button>
       </div>
     </article>
   </section>
@@ -153,6 +169,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
         <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);margin-bottom:8px">Film Session</h3>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:var(--gold);margin-bottom:12px">$20</div>
         <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.75">1 hour. We go through your film and build a detailed plan based on your strengths and weaknesses. Being shown is better than being told.</p>
+      <button class="add-to-cart" onclick="addToCart('film-session',this)">Add to Cart</button>
       </div>
 
       <div style="background:var(--black);padding:28px">
@@ -160,6 +177,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
         <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);margin-bottom:8px">1 Solo Session</h3>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:var(--gold);margin-bottom:12px">$40</div>
         <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.75">1 hour of individual one-on-one coaching with Coach James.</p>
+      <button class="add-to-cart" onclick="addToCart('solo-1',this)">Add to Cart</button>
       </div>
 
       <div style="background:var(--black);padding:28px">
@@ -167,6 +185,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
         <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);margin-bottom:8px">1 Group Session</h3>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:var(--gold);margin-bottom:12px">$25</div>
         <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.75">1 hour group session. No more than 4 athletes. Competitive training environment.</p>
+      <button class="add-to-cart" onclick="addToCart('group-1',this)">Add to Cart</button>
       </div>
 
       <div style="background:var(--black);padding:28px">
@@ -177,6 +196,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
           <span style="font-size:13px;color:rgba(255,255,255,.35);text-decoration:line-through">$200</span>
         </div>
         <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.75">5 hours of individual coaching. Save $20 over single session rate.</p>
+      <button class="add-to-cart" onclick="addToCart('solo-5',this)">Add to Cart</button>
       </div>
 
       <div style="background:var(--black);padding:28px">
@@ -187,6 +207,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
           <span style="font-size:13px;color:rgba(255,255,255,.35);text-decoration:line-through">$125</span>
         </div>
         <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.75">5 group sessions. Max 4 athletes. Save $15 over single session rate.</p>
+      <button class="add-to-cart" onclick="addToCart('group-5',this)">Add to Cart</button>
       </div>
 
       <div style="background:var(--black);padding:28px">
@@ -197,6 +218,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
           <span style="font-size:13px;color:rgba(255,255,255,.35);text-decoration:line-through">$320</span>
         </div>
         <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.75">8 hours of individual coaching. Save $30 over single session rate.</p>
+      <button class="add-to-cart" onclick="addToCart('solo-8',this)">Add to Cart</button>
       </div>
 
       <div style="background:var(--black);padding:28px">
@@ -207,6 +229,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
           <span style="font-size:13px;color:rgba(255,255,255,.35);text-decoration:line-through">$200</span>
         </div>
         <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.75">8 group sessions. Max 4 athletes. Save $20 over single session rate.</p>
+      <button class="add-to-cart" onclick="addToCart('group-8',this)">Add to Cart</button>
       </div>
 
       <div style="background:var(--black);padding:28px">
@@ -217,6 +240,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
           <span style="font-size:13px;color:rgba(255,255,255,.35);text-decoration:line-through">$250</span>
         </div>
         <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.75">10 group sessions. Max 4 athletes. Save $30 over single session rate.</p>
+      <button class="add-to-cart" onclick="addToCart('group-10',this)">Add to Cart</button>
       </div>
 
     </div>
@@ -232,6 +256,13 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
       <div class="full"><a class="btn-primary" href="/cdn-cgi/l/email-protection#e2848d978c8683968b8d8c8e8b8c878f838ca2858f838b8ecc818d8f">Send Message</a></div>
     </div>
   </section>
+<div id="cart-bar">
+  <div id="cart-summary"></div>
+  <div id="cart-actions">
+    <input id="discount-input" type="text" placeholder="Discount code" />
+    <button id="checkout-btn" onclick="checkout()">Checkout</button>
+  </div>
+</div>
 </main>
 <footer><div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none'" /></div><div class="footer-col"><h3>Contact</h3><a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a><a href="tel:+15404268544">540-426-8544</a></div><div class="footer-col"><h3>Quick Links</h3><a href="./index.html">Home</a><a href="./scheduling.html">Scheduling</a><a href="./faq.html">FAQ</a></div></footer>
 <div class="footer-bottom">&copy; 2025 Foundation Lineman. All righ
@@ -241,4 +272,11 @@ var btn=document.getElementById('hamburgerBtn');
 var menu=document.getElementById('mobileMenu');
 btn.onclick=function(){btn.classList.toggle('active');menu.classList.toggle('open');};
 document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){btn.classList.remove('active');menu.classList.remove('open');}});
+</script>
+<script>
+var PRICES={'film-session':{name:'Film Session',price:20},'solo-1':{name:'1 Solo Session',price:40},'group-1':{name:'1 Group Session',price:25},'solo-5':{name:'5 Solo Sessions',price:180},'group-5':{name:'5 Group Sessions',price:110},'solo-8':{name:'8 Solo Sessions',price:290},'group-8':{name:'8 Group Sessions',price:180},'group-10':{name:'10 Group Sessions',price:220},'summer-solo':{name:'Summer Bundle (Solo)',price:800},'summer-group':{name:'Summer Bundle (Group)',price:400}};
+var cart={};
+function addToCart(id,btn){cart[id]=(cart[id]||0)+1;btn.textContent='Added ✓';btn.classList.add('added');setTimeout(function(){btn.textContent='Add to Cart';btn.classList.remove('added');},1500);updateCartBar();}
+function updateCartBar(){var total=0,count=0;Object.keys(cart).forEach(function(id){total+=PRICES[id].price*cart[id];count+=cart[id];});var bar=document.getElementById('cart-bar'),summary=document.getElementById('cart-summary');if(count>0){bar.classList.add('visible');summary.innerHTML='<span>'+count+' item'+(count>1?'s':'')+'</span> &mdash; $'+total.toLocaleString();}else{bar.classList.remove('visible');}}
+async function checkout(){var btn=document.getElementById('checkout-btn'),discount=document.getElementById('discount-input').value.trim();btn.disabled=true;btn.textContent='Loading...';var items=Object.keys(cart).map(function(id){return{id:id,quantity:cart[id]};});try{var res=await fetch('/.netlify/functions/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:items,discountCode:discount})});var data=await res.json();if(data.url){window.location.href=data.url;}else{alert('Error: '+(data.error||'Something went wrong'));btn.disabled=false;btn.textContent='Checkout';}}catch(e){alert('Network error. Please try again.');btn.disabled=false;btn.textContent='Checkout';}}
 </script>

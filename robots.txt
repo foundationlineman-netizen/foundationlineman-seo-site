@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+<<<<<<< HEAD
 Sitemap: https://www.foundationlineman.net/sitemap.xml
+=======
+Sitemap: https://foundationlineman-netizen.github.io/foundationlineman-seo-site/sitemap.xml
+>>>>>>> e11c06449d0597fe035e2e8accbe9597408f21aa

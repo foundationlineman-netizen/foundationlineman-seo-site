@@ -61,6 +61,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 .footer-col a:hover{color:var(--gold)}
 .footer-bottom{background:var(--black);border-top:1px solid rgba(255,255,255,.07);padding:20px 3rem;text-align:center;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.06em;margin-top:40px}
 @media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.hamburger{display:flex}.sched-hero,.sched-cards,.sched-cta{padding-left:1.5rem;padding-right:1.5rem}.sched-cards{grid-template-columns:1fr}footer{grid-template-columns:1fr;padding:48px 1.5rem 0}}
+
 </style>
 </head>
 <body>
@@ -68,15 +69,29 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
   <a href="./index.html" aria-label="Foundation Lineman Home"><img class="nav-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman logo" onerror="this.style.display='none'" /></a>
   <ul class="nav-links"><li><a href="./index.html">Home</a></li><li><a href="./about.html">About the Coach</a></li><li><a href="./results.html">Proven Results</a></li><li><a href="./scheduling.html" class="active">Scheduling</a></li><li><a href="./services.html">Services</a></li><li><a href="./ambassadors.html">Ambassadors</a></li><li><a href="./watch.html">Watch Us Work!</a></li><li><a href="./faq.html">FAQ</a></li></ul>
   
-  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
 <nav class="mobile-menu" id="mobileMenu"><a href="./index.html">Home</a><a href="./about.html">About the Coach</a><a href="./results.html">Proven Results</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a><a href="./ambassadors.html">Ambassadors</a><a href="./watch.html">Watch Us Work!</a><a href="./faq.html">FAQ</a></nav>
 <main>
   <section class="sched-hero"><p class="section-label">Book Your Session</p><h1>SCHEDULE<br /><span>A SESSION</span></h1><p>Start with a free consultation. We'll assess your goals, experience level, and training needs before getting into any paid program.</p></section>
   <section class="sched-cards" aria-label="Session options">
-    <article class="sched-card"><h2>Free Consultation</h2><div class="price">$0<small>free</small></div><p>A no-obligation conversation to discuss your goals, film, and what Foundation Lineman can do for you. No strings attached.</p><ul class="features"><li>1-on-1 with Coach James</li><li>Goal setting and needs assessment</li><li>Program recommendations</li><li>No commitment required</li></ul><a class="btn-primary" href="/cdn-cgi/l/email-protection#b7d1d8c2d9d3d6c3ded8d9dbded9d2dad6d9f7d0dad6dedb99d4d8da88c4c2d5ddd2d4c38af1c5d2d297f4d8d9c4c2dbc3d6c3ded8d997e5d2c6c2d2c4c3">Book Free Consultation</a></article>
-    <article class="sched-card"><h2>Film Consultation</h2><div class="price">$20</div><p>Submit your game or practice film and receive detailed position-specific feedback on your technique, footwork, and decision-making.</p><ul class="features"><li>Full film review by Coach James</li><li>Written breakdown of strengths and areas to develop</li><li>Personalized drill recommendations</li><li>Best starting point before training</li></ul><a class="btn-primary" href="/cdn-cgi/l/email-protection#27414852494346534e48494b4e49424a464967404a464e4b0944484a185452454d4244531a614e4b4a0764484954524b5346534e48490775425652425453">Book Film Consultation</a></article>
+    <article class="sched-card"><h2>Free Consultation</h2><div class="price">$0<small>free</small></div><p>A no-obligation conversation to discuss your goals, film, and what Foundation Lineman can do for you. No strings attached.</p><ul class="features"><li>1-on-1 with Coach James</li><li>Goal setting and needs assessment</li><li>Program recommendations</li><li>No commitment required</li></ul><a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a></article>
+    <article class="sched-card"><h2>Film Consultation</h2><div class="price">$20</div><p>Submit your game or practice film and receive detailed position-specific feedback on your technique, footwork, and decision-making.</p><ul class="features"><li>Full film review by Coach James</li><li>Written breakdown of strengths and areas to develop</li><li>Personalized drill recommendations</li><li>Best starting point before training</li></ul><a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a></article>
   </section>
-  <section class="sched-cta"><h2>READY TO GET TO WORK?</h2><p>Reach out directly — we respond within one business day.</p><div class="contact-pills"><a class="pill" href="/cdn-cgi/l/email-protection#e3858c968d8782978a8c8d8f8a8d868e828da3848e828a8fcd808c8e"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span class="__cf_email__" data-cfemail="86e0e9f3e8e2e7f2efe9e8eaefe8e3ebe7e8c6e1ebe7efeaa8e5e9eb">[email&#160;protected]</span></a><a class="pill" href="tel:+15404268544"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/></svg>540-426-8544</a></div></section>
+  <section class="sched-cta"><h2>READY TO GET TO WORK?</h2><p>Reach out directly — we respond within one business day.</p><div class="contact-pills"><a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a><a class="pill" href="tel:+15404268544"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/></svg>540-426-8544</a></div></section>
 </main>
-<footer><div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none'" /></div><div class="footer-col"><h3>Contact</h3><a href="/cdn-cgi/l/email-protection#62040d170c0603160b0d0c0e0b0c070f030c22050f030b0e4c010d0f"><span class="__cf_email__" data-cfemail="d3b5bca6bdb7b2a7babcbdbfbabdb6beb2bd93b4beb2babffdb0bcbe">[email&#160;protected]</span></a><a h
+<footer><div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none'" /></div><div class="footer-col"><h3>Contact</h3><a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a><a h
+<script>
+(function(){
+  var hbtn=document.getElementById('hamburgerBtn');
+  var hmenu=document.getElementById('mobileMenu');
+  if(hbtn&&hmenu){
+    hbtn.onclick=function(){hbtn.classList.toggle('active');hmenu.classList.toggle('open');};
+  }
+  document.addEventListener('click',function(e){
+    if(hbtn&&hmenu&&!hbtn.contains(e.target)&&!hmenu.contains(e.target)){
+      hbtn.classList.remove('active');hmenu.classList.remove('open');
+    }
+  });
+})();
+</script>

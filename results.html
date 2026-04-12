@@ -58,6 +58,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 .footer-col a:hover{color:var(--gold)}
 .footer-bottom{background:var(--black);border-top:1px solid rgba(255,255,255,.07);padding:20px 3rem;text-align:center;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.06em;margin-top:40px}
 @media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.hamburger{display:flex}.results-hero{padding-left:1.5rem;padding-right:1.5rem}.stats-bar{grid-template-columns:repeat(2,1fr)}.athletes-grid{grid-template-columns:1fr}footer{grid-template-columns:1fr;padding:48px 1.5rem 0}}
+
 </style>
 </head>
 <body>
@@ -67,7 +68,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
     <li><a href="./index.html">Home</a></li><li><a href="./about.html">About the Coach</a></li><li><a href="./results.html" class="active">Proven Results</a></li><li><a href="./scheduling.html">Scheduling</a></li><li><a href="./services.html">Services</a></li><li><a href="./ambassadors.html">Ambassadors</a></li><li><a href="./watch.html">Watch Us Work!</a></li><li><a href="./faq.html">FAQ</a></li>
   </ul>
   
-  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
 <nav class="mobile-menu" id="mobileMenu"><a href="./index.html">Home</a><a href="./about.html">About the Coach</a><a href="./results.html">Proven Results</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a><a href="./ambassadors.html">Ambassadors</a><a href="./watch.html">Watch Us Work!</a><a href="./faq.html">FAQ</a></nav>
 <main>
@@ -92,6 +93,20 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
   </section>
   <img class="results-img" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/cf7581b7-207d-46da-802b-ced0fa8a702e/Your+paragraph+text.png" alt="Foundation Lineman proven results graphic showing All-Conference athletes" loading="lazy" />
 </main>
-<footer><div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none'" /></div><div class="footer-col"><h3>Contact</h3><a href="/cdn-cgi/l/email-protection#b0d6dfc5ded4d1c4d9dfdedcd9ded5ddd1def0d7ddd1d9dc9ed3dfdd"><span class="__cf_email__" data-cfemail="f1979e849f959085989e9f9d989f949c909fb1969c90989ddf929e9c">[email&#160;protected]</span></a><a href="tel:+15404268544">540-426-8544</a></div><div class="footer-col"><h3>Quick Links</h3><a href="./index.html">Home</a><a href="./about.html">About the Coach</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a></div></footer>
+<footer><div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none'" /></div><div class="footer-col"><h3>Contact</h3><a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a><a href="tel:+15404268544">540-426-8544</a></div><div class="footer-col"><h3>Quick Links</h3><a href="./index.html">Home</a><a href="./about.html">About the Coach</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a></div></footer>
 <div class="footer-bottom">&copy; 2025 Foundation Lineman. All rights reserved.</div>
 <script data-cfasync="false" sr
+<script>
+(function(){
+  var hbtn=document.getElementById('hamburgerBtn');
+  var hmenu=document.getElementById('mobileMenu');
+  if(hbtn&&hmenu){
+    hbtn.onclick=function(){hbtn.classList.toggle('active');hmenu.classList.toggle('open');};
+  }
+  document.addEventListener('click',function(e){
+    if(hbtn&&hmenu&&!hbtn.contains(e.target)&&!hmenu.contains(e.target)){
+      hbtn.classList.remove('active');hmenu.classList.remove('open');
+    }
+  });
+})();
+</script>

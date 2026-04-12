@@ -118,6 +118,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
   .faq-hero,.faq-body,.faq-cta{padding-left:1.5rem;padding-right:1.5rem}
   footer{grid-template-columns:1fr;padding:48px 1.5rem 0}
 }
+
 </style>
 </head>
 <body>
@@ -137,7 +138,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
     <li role="none"><a href="./faq.html" class="active" role="menuitem">FAQ</a></li>
   </ul>
   
-  <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
   <a href="./index.html">Home</a><a href="./about.html">About the Coach</a><a href="./results.html">Proven Results</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a><a href="./ambassadors.html">Ambassadors</a><a href="./watch.html">Watch Us Work!</a><a href="./faq.html">FAQ</a>
@@ -184,7 +185,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
         <div class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
       </button>
       <div class="faq-a" role="region">
-        <div class="faq-a-inner">You can reach us anytime via our contact page or email at <a href="/cdn-cgi/l/email-protection#87e1e8f2e9e3e6f3eee8e9ebeee9e2eae6e9c7e0eae6eeeba9e4e8ea" style="color:var(--gold)"><span class="__cf_email__" data-cfemail="e98f869c878d889d8086878580878c848887a98e84888085c78a8684">[email&#160;protected]</span></a> or call/text <a href="tel:+15404268544" style="color:var(--gold)">540-426-8544</a>. We aim to respond within one business day.</div>
+        <div class="faq-a-inner">You can reach us anytime via our contact page or email at <a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a> or call/text <a href="tel:+15404268544" style="color:var(--gold)">540-426-8544</a>. We aim to respond within one business day.</div>
       </div>
     </div>
     <div class="faq-item">
@@ -286,9 +287,23 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 
 <footer>
   <div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none';" /></div>
-  <div class="footer-col"><h3>Contact</h3><a href="/cdn-cgi/l/email-protection#72141d071c1613061b1d1c1e1b1c171f131c32151f131b1e5c111d1f"><span class="__cf_email__" data-cfemail="b2d4ddc7dcd6d3c6dbdddcdedbdcd7dfd3dcf2d5dfd3dbde9cd1dddf">[email&#160;protected]</span></a><a href="tel:+15404268544">540-426-8544</a><a href="https://g.page/r/Ca6VzBSQU3vsEAE/review" target="_blank" rel="noopener" style="color:var(--gold)">Leave a review ↗</a></div>
+  <div class="footer-col"><h3>Contact</h3><a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a><a href="tel:+15404268544">540-426-8544</a><a href="https://g.page/r/Ca6VzBSQU3vsEAE/review" target="_blank" rel="noopener" style="color:var(--gold)">Leave a review ↗</a></div>
   <div class="footer-col"><h3>Quick Links</h3><a href="./index.html">Home</a><a href="./about.html">About the Coach</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a></div>
 </footer>
 <div class="footer-bottom">&copy; 2025 Foundation Lineman. All rights reserved.</div>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function toggleMenu(btn){const m=document.getElementById('mobileMenu');const open=m.classList.toggle('open
+<script>
+(function(){
+  var hbtn=document.getElementById('hamburgerBtn');
+  var hmenu=document.getElementById('mobileMenu');
+  if(hbtn&&hmenu){
+    hbtn.onclick=function(){hbtn.classList.toggle('active');hmenu.classList.toggle('open');};
+  }
+  document.addEventListener('click',function(e){
+    if(hbtn&&hmenu&&!hbtn.contains(e.target)&&!hmenu.contains(e.target)){
+      hbtn.classList.remove('active');hmenu.classList.remove('open');
+    }
+  });
+})();
+</script>

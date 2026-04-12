@@ -136,11 +136,11 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
   footer{grid-template-columns:1fr;padding:48px 1.5rem 0;}
 }
 
-.dropdown{position:relative}
-.dropdown-menu{position:absolute;top:100%;left:0;background:#111;border:1px solid rgba(200,168,75,0.2);min-width:180px;display:none;flex-direction:column;z-index:300}
-.dropdown-menu a{padding:10px 14px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
-.dropdown-menu a:hover{background:#222;color:#c8a84b}
-.dropdown-menu.show{display:flex}
+
+
+
+
+
 
 #hamburgerBtn{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
 #hamburgerBtn span{width:22px;height:2px;background:#fff;display:block;transition:transform .3s,opacity .3s}
@@ -152,6 +152,12 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
 #mobileMenu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:16px 1.5rem;border-bottom:1px solid rgba(255,255,255,.07);display:block}
 #mobileMenu a:hover{color:#c8a84b;background:rgba(200,168,75,.06)}
 @media(max-width:960px){.nav-links{display:none!important}#hamburgerBtn{display:flex!important}}
+
+.dropdown{position:relative}
+.dropdown-menu{position:absolute;top:100%;left:0;background:#111;border:1px solid rgba(200,168,75,0.2);min-width:180px;display:none;flex-direction:column;z-index:300}
+.dropdown-menu a{padding:10px 14px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.08em;display:block}
+.dropdown-menu a:hover{background:#222;color:#c8a84b}
+.dropdown-menu.show{display:flex}
 </style>
 </head>
 <body>
@@ -165,7 +171,7 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
     <li role="none"><a href="./about.html" role="menuitem">About the Coach</a></li>
     <li role="none"><a href="./results.html" role="menuitem">Proven Results</a></li>
     <li role="none"><a href="./scheduling.html" role="menuitem">Scheduling</a></li>
-    <li class="dropdown"><a onclick="toggleDropdown(event)" style="cursor:pointer;color:rgba(255,255,255,.72);font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase">Services ▼</a><div class="dropdown-menu" id="servicesDropdown"><a href="./services.html">All Services</a><a href="./services.html">1-on-1 Training</a><a href="./services.html">Group Training</a><a href="./scheduling.html">Book a Session</a></div></li>
+    <li><a href="./services.html">Services</a></li>
     <li role="none"><a href="./ambassadors.html" role="menuitem">Ambassadors</a></li>
     <li role="none"><a href="./watch.html" role="menuitem">Watch Us Work!</a></li>
     <li role="none"><a href="./faq.html" role="menuitem">FAQ</a></li>
@@ -283,17 +289,7 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
 <div class="footer-bottom">&copy; 2025 Foundation Lineman. All rights reserved.</div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts
-<script>
-function toggleDropdown(e){
-  e.stopPropagation();
-  var menu=document.getElementById('servicesDropdown');
-  menu.classList.toggle('show');
-}
-document.addEventListener('click',function(){
-  var menu=document.getElementById('servicesDropdown');
-  if(menu) menu.classList.remove('show');
-});
-</script>
+
 <script>
 var btn=document.getElementById('hamburgerBtn');
 var menu=document.getElementById('mobileMenu');

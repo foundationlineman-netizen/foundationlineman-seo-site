@@ -62,11 +62,11 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 .footer-bottom{background:var(--black);border-top:1px solid rgba(255,255,255,.07);padding:20px 3rem;text-align:center;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.06em;margin-top:40px}
 @media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.hamburger{display:flex}.sched-hero,.sched-cards,.sched-cta{padding-left:1.5rem;padding-right:1.5rem}.sched-cards{grid-template-columns:1fr}footer{grid-template-columns:1fr;padding:48px 1.5rem 0}}
 
-.dropdown{position:relative}
-.dropdown-menu{position:absolute;top:100%;left:0;background:#111;border:1px solid rgba(200,168,75,0.2);min-width:180px;display:none;flex-direction:column;z-index:300}
-.dropdown-menu a{padding:10px 14px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
-.dropdown-menu a:hover{background:#222;color:#c8a84b}
-.dropdown-menu.show{display:flex}
+
+
+
+
+
 
 #hamburgerBtn{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
 #hamburgerBtn span{width:22px;height:2px;background:#fff;display:block;transition:transform .3s,opacity .3s}
@@ -78,12 +78,18 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 #mobileMenu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:16px 1.5rem;border-bottom:1px solid rgba(255,255,255,.07);display:block}
 #mobileMenu a:hover{color:#c8a84b;background:rgba(200,168,75,.06)}
 @media(max-width:960px){.nav-links{display:none!important}#hamburgerBtn{display:flex!important}}
+
+.dropdown{position:relative}
+.dropdown-menu{position:absolute;top:100%;left:0;background:#111;border:1px solid rgba(200,168,75,0.2);min-width:180px;display:none;flex-direction:column;z-index:300}
+.dropdown-menu a{padding:10px 14px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.08em;display:block}
+.dropdown-menu a:hover{background:#222;color:#c8a84b}
+.dropdown-menu.show{display:flex}
 </style>
 </head>
 <body>
 <nav aria-label="Main navigation">
   <a href="./index.html" aria-label="Foundation Lineman Home"><img class="nav-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman logo" onerror="this.style.display='none'" /></a>
-  <ul class="nav-links"><li><a href="./index.html">Home</a></li><li><a href="./about.html">About the Coach</a></li><li><a href="./results.html">Proven Results</a></li><li><a href="./scheduling.html" class="active">Scheduling</a></li><li class="dropdown"><a onclick="toggleDropdown(event)" style="cursor:pointer">Services ▼</a><div class="dropdown-menu" id="servicesDropdown"><a href="./services.html">All Services</a><a href="./services.html#solo">1-on-1 Training</a><a href="./services.html#group">Group Training</a><a href="./scheduling.html">Book a Session</a></div></li><li><a href="./ambassadors.html">Ambassadors</a></li><li><a href="./watch.html">Watch Us Work!</a></li><li><a href="./faq.html">FAQ</a></li></ul>
+  <ul class="nav-links"><li><a href="./index.html">Home</a></li><li><a href="./about.html">About the Coach</a></li><li><a href="./results.html">Proven Results</a></li><li><a href="./scheduling.html" class="active">Scheduling</a></li><li><a href="./services.html">Services</a></li><li><a href="./ambassadors.html">Ambassadors</a></li><li><a href="./watch.html">Watch Us Work!</a></li><li><a href="./faq.html">FAQ</a></li></ul>
   <a class="nav-cart" href="#">Cart (0)</a>
   <button id="hamburgerBtn"><span></span><span></span><span></span></button>
 </nav>
@@ -107,17 +113,7 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
   <section class="sched-cta"><h2>READY TO GET TO WORK?</h2><p>Reach out directly — we respond within one business day.</p><div class="contact-pills"><a class="pill" href="/cdn-cgi/l/email-protection#82e4edf7ece6e3f6ebedeceeebece7efe3ecc2e5efe3ebeeace1edef"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span class="__cf_email__" data-cfemail="93f5fce6fdf7f2e7fafcfdfffafdf6fef2fdd3f4fef2faffbdf0fcfe">[email&#160;protected]</span></a><a class="pill" href="tel:+15404268544"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/></svg>540-426-8544</a></div></section>
 </main>
 <footer><div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none'" /></div><div class="footer-col"><h3>Contact</h3><a href="/cdn-cgi/l/email-protection#fb9d948e959f9a8f9294959792959e969a95bb9c969a9297d5989496"><span class="__cf_email__" data-cfemail="0f69607a616b6e7b6660616366616a626e614f68626e6663216c6062">[email&#160;protected]</span></a><a h
-<script>
-function toggleDropdown(e){
-  e.stopPropagation();
-  var menu=document.getElementById('servicesDropdown');
-  menu.classList.toggle('show');
-}
-document.addEventListener('click',function(){
-  var menu=document.getElementById('servicesDropdown');
-  if(menu) menu.classList.remove('show');
-});
-</script>
+
 <script>
 var btn=document.getElementById('hamburgerBtn');
 var menu=document.getElementById('mobileMenu');

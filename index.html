@@ -127,8 +127,7 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
 @media(max-width:960px){
   nav{padding:0 1.5rem;}
   .nav-links{display:none;}
-  .hamburger{display:flex;}
-  .hero{padding:110px 1.5rem 60px;}
+    .hero{padding:110px 1.5rem 60px;}
   .ig-section{padding:60px 1.5rem;}
   .ig-grid{grid-template-columns:repeat(2,1fr);}
   .about-split{grid-template-columns:1fr;gap:40px;padding:60px 1.5rem;}
@@ -136,6 +135,14 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
   footer{grid-template-columns:1fr;padding:48px 1.5rem 0;}
 }
 
+
+.nav-dropdown{position:relative}
+.nav-toggle{background:none;border:none;color:rgba(255,255,255,0.8);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;padding:4px 8px}
+.nav-toggle:hover{color:#c8a84b}
+.dropdown-nav{position:absolute;top:140%;right:0;background:#111;border:1px solid rgba(200,168,75,0.15);display:none;flex-direction:column;min-width:200px;z-index:9999}
+.dropdown-nav a{padding:12px 16px;display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:11px;letter-spacing:0.1em;text-transform:uppercase}
+.dropdown-nav a:hover{background:#1a1a1a;color:#c8a84b}
+.dropdown-nav.show{display:flex}
 </style>
 </head>
 <body>
@@ -144,31 +151,23 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
     <img class="nav-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman logo" onerror="this.style.display='none';document.querySelector('.nav-logo-fb').style.display='block';" />
     <span class="nav-logo-fb">FOUNDATION LINEMAN</span>
   </a>
-  <ul class="nav-links" role="menubar">
-    <li role="none"><a href="./index.html" class="active" role="menuitem">Home</a></li>
-    <li role="none"><a href="./about.html" role="menuitem">About the Coach</a></li>
-    <li role="none"><a href="./results.html" role="menuitem">Proven Results</a></li>
-    <li role="none"><a href="./scheduling.html" role="menuitem">Scheduling</a></li>
-    <li role="none"><a href="./services.html" role="menuitem">Services</a></li>
-    <li role="none"><a href="./ambassadors.html" role="menuitem">Ambassadors</a></li>
-    <li role="none"><a href="./watch.html" role="menuitem">Watch Us Work!</a></li>
-    <li role="none"><a href="./faq.html" role="menuitem">FAQ</a></li>
+  <div class="nav-dropdown">
+  <button class="nav-toggle" onclick="toggleNavDropdown()">&#9776; Menu</button>
+  <ul class="nav-links dropdown-nav" id="navDropdown">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./about.html">About the Coach</a></li>
+    <li><a href="./results.html">Proven Results</a></li>
+    <li><a href="./scheduling.html">Scheduling</a></li>
+    <li><a href="./services.html">Services</a></li>
+    <li><a href="./ambassadors.html">Ambassadors</a></li>
+    <li><a href="./watch.html">Watch Us Work!</a></li>
+    <li><a href="./faq.html">FAQ</a></li>
   </ul>
+</div>
   
-  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
+  
 </nav>
-<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
-  <a href="./index.html">Home</a>
-  <a href="./about.html">About the Coach</a>
-  <a href="./results.html">Proven Results</a>
-  <a href="./scheduling.html">Scheduling</a>
-  <a href="./services.html">Services</a>
-  <a href="./ambassadors.html">Ambassadors</a>
-  <a href="./watch.html">Watch Us Work!</a>
-  <a href="./faq.html">FAQ</a>
-</nav>
+
 
 <main>
   <section class="hero" aria-label="Hero">
@@ -267,12 +266,18 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
 </footer>
 <div class="footer-bottom">&copy; 2025 Foundation Lineman. All rights reserved.</div>
 
-<script>
 (function(){
-  var hbtn=document.getElementById('hamburgerBtn');
-  var hmenu=document.getElementById('mobileMenu');
-  if(hbtn&&hmenu){
-    hbtn.onclick=function(){hbtn.classList.toggle('active');hmenu.classList.toggle('open');};
+  var hbtn=document.getElement
+<script>
+function toggleNavDropdown(){
+  var menu=document.getElementById("navDropdown");
+  menu.classList.toggle("show");
+}
+document.addEventListener("click",function(e){
+  var menu=document.getElementById("navDropdown");
+  var toggle=document.querySelector(".nav-toggle");
+  if(menu&&toggle&&!menu.contains(e.target)&&!toggle.contains(e.target)){
+    menu.classList.remove("show");
   }
-  document.addEventListener('click',function(e){
-    if(hbtn&&hmenu&&
+});
+</script>

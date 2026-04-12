@@ -25,11 +25,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97
 .nav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--gold)}
 .nav-cart{color:rgba(255,255,255,.72);font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;text-decoration:none}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;display:block}
-.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;z-index:199;background:#0a0a0a;padding:1.5rem 2rem;flex-direction:column;gap:1.2rem;border-bottom:1px solid rgba(200,168,75,.18)}
-.mobile-menu.open{display:flex}
-.mobile-menu a{color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 .section-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .watch-hero{background:var(--black);padding:100px 3rem 80px;margin-top:68px;position:relative;overflow:hidden}
 .watch-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 40%,rgba(200,168,75,.06) 0%,transparent 60%);pointer-events:none}
@@ -52,19 +47,39 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 .footer-col a{font-size:13px;color:rgba(255,255,255,.5);line-height:2;display:block;text-decoration:none;transition:color .2s}
 .footer-col a:hover{color:var(--gold)}
 .footer-bottom{background:var(--black);border-top:1px solid rgba(255,255,255,.07);padding:20px 3rem;text-align:center;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.06em;margin-top:40px}
-@media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.hamburger{display:flex}.watch-hero,.video-grid{padding-left:1.5rem;padding-right:1.5rem}.video-grid{grid-template-columns:repeat(2,1fr)}footer{grid-template-columns:1fr;padding:48px 1.5rem 0}}
+@media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.watch-hero,.video-grid{padding-left:1.5rem;padding-right:1.5rem}.video-grid{grid-template-columns:repeat(2,1fr)}footer{grid-template-columns:1fr;padding:48px 1.5rem 0}}
 @media(max-width:480px){.video-grid{grid-template-columns:1fr}}
 
+
+.nav-dropdown{position:relative}
+.nav-toggle{background:none;border:none;color:rgba(255,255,255,0.8);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;padding:4px 8px}
+.nav-toggle:hover{color:#c8a84b}
+.dropdown-nav{position:absolute;top:140%;right:0;background:#111;border:1px solid rgba(200,168,75,0.15);display:none;flex-direction:column;min-width:200px;z-index:9999}
+.dropdown-nav a{padding:12px 16px;display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:11px;letter-spacing:0.1em;text-transform:uppercase}
+.dropdown-nav a:hover{background:#1a1a1a;color:#c8a84b}
+.dropdown-nav.show{display:flex}
 </style>
 </head>
 <body>
 <nav aria-label="Main navigation">
   <a href="./index.html" aria-label="Foundation Lineman Home"><img class="nav-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman logo" onerror="this.style.display='none'" /></a>
-  <ul class="nav-links"><li><a href="./index.html">Home</a></li><li><a href="./about.html">About the Coach</a></li><li><a href="./results.html">Proven Results</a></li><li><a href="./scheduling.html">Scheduling</a></li><li><a href="./services.html">Services</a></li><li><a href="./ambassadors.html">Ambassadors</a></li><li><a href="./watch.html" class="active">Watch Us Work!</a></li><li><a href="./faq.html">FAQ</a></li></ul>
+  <div class="nav-dropdown">
+  <button class="nav-toggle" onclick="toggleNavDropdown()">&#9776; Menu</button>
+  <ul class="nav-links dropdown-nav" id="navDropdown">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./about.html">About the Coach</a></li>
+    <li><a href="./results.html">Proven Results</a></li>
+    <li><a href="./scheduling.html">Scheduling</a></li>
+    <li><a href="./services.html">Services</a></li>
+    <li><a href="./ambassadors.html">Ambassadors</a></li>
+    <li><a href="./watch.html">Watch Us Work!</a></li>
+    <li><a href="./faq.html">FAQ</a></li>
+  </ul>
+</div>
   
-  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  
 </nav>
-<nav class="mobile-menu" id="mobileMenu"><a href="./index.html">Home</a><a href="./about.html">About the Coach</a><a href="./results.html">Proven Results</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a><a href="./ambassadors.html">Ambassadors</a><a href="./watch.html">Watch Us Work!</a><a href="./faq.html">FAQ</a></nav>
+
 <main>
   <section class="watch-hero"><p class="section-label">Film Room</p><h1>IT ALL<br /><span>BEGINS HERE</span></h1></section>
   <section class="video-grid" aria-label="Training videos">
@@ -81,9 +96,17 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 </main>
 <footer><div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none'" /></div><div class="footer-col"><h3>Contact</h3><a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a><a href="tel:+15404268544">540-426-8544</a></div><div class="footer-col"><h3>Quick Links</h3><a href="./index.html">Home</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a><a href="./faq.html">FAQ</a></div></footer>
 <div class="footer-bottom">&copy; 2025 Foundation Lineman. All rights reserved.</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5
 <script>
-(function(){
-  var hbtn=document.getElementById('hamburgerBtn');
-  var hmenu=document.getElementById('mobileMenu');
-  if(hbtn&&hmenu){
-    hbtn.onclick=function(){hbtn.classList.toggle('active')
+function toggleNavDropdown(){
+  var menu=document.getElementById("navDropdown");
+  menu.classList.toggle("show");
+}
+document.addEventListener("click",function(e){
+  var menu=document.getElementById("navDropdown");
+  var toggle=document.querySelector(".nav-toggle");
+  if(menu&&toggle&&!menu.contains(e.target)&&!toggle.contains(e.target)){
+    menu.classList.remove("show");
+  }
+});
+</script>

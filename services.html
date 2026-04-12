@@ -67,16 +67,6 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 
 
 
-#hamburgerBtn{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
-#hamburgerBtn span{width:22px;height:2px;background:#fff;display:block;transition:transform .3s,opacity .3s}
-#hamburgerBtn.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-#hamburgerBtn.active span:nth-child(2){opacity:0}
-#hamburgerBtn.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-#mobileMenu{position:fixed;top:68px;left:0;right:0;z-index:999;background:#0a0a0a;overflow:hidden;max-height:0;transition:max-height .3s ease}
-#mobileMenu.open{max-height:500px}
-#mobileMenu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:16px 1.5rem;border-bottom:1px solid rgba(255,255,255,.07);display:block}
-#mobileMenu a:hover{color:#c8a84b;background:rgba(200,168,75,.06)}
-@media(max-width:960px){.nav-links{display:none!important}#hamburgerBtn{display:flex!important}}
 
 
 #cart-bar{position:fixed;bottom:0;left:0;right:0;background:#0a0a0a;border-top:2px solid #c8a84b;z-index:500;display:none;align-items:center;justify-content:space-between;padding:14px 2rem;gap:16px}
@@ -134,16 +124,7 @@ document.addEventListener("click",function(e){
   
   
 </nav>
-<div id="mobileMenu">
-  <a href="./index.html">Home</a>
-  <a href="./about.html">About the Coach</a>
-  <a href="./results.html">Proven Results</a>
-  <a href="./scheduling.html">Scheduling</a>
-  <a href="./services.html">Services</a>
-  <a href="./ambassadors.html">Ambassadors</a>
-  <a href="./watch.html">Watch Us Work!</a>
-  <a href="./faq.html">FAQ</a>
-</div>
+
 
 <main>
   <div class="services-hero-wrap">

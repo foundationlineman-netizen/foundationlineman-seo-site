@@ -267,7 +267,6 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
 </footer>
 <div class="footer-bottom">&copy; 2025 Foundation Lineman. All rights reserved.</div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts
 <script>
 (function(){
   var hbtn=document.getElementById('hamburgerBtn');
@@ -276,9 +275,4 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
     hbtn.onclick=function(){hbtn.classList.toggle('active');hmenu.classList.toggle('open');};
   }
   document.addEventListener('click',function(e){
-    if(hbtn&&hmenu&&!hbtn.contains(e.target)&&!hmenu.contains(e.target)){
-      hbtn.classList.remove('active');hmenu.classList.remove('open');
-    }
-  });
-})();
-</script>
+    if(hbtn&&hmenu&&

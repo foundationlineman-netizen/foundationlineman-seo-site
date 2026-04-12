@@ -135,29 +135,6 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
   .social-section{padding:60px 1.5rem;}
   footer{grid-template-columns:1fr;padding:48px 1.5rem 0;}
 }
-
-
-
-
-
-
-
-#hamburgerBtn{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
-#hamburgerBtn span{width:22px;height:2px;background:#fff;display:block;transition:transform .3s,opacity .3s}
-#hamburgerBtn.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-#hamburgerBtn.active span:nth-child(2){opacity:0}
-#hamburgerBtn.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-#mobileMenu{position:fixed;top:68px;left:0;right:0;z-index:999;background:#0a0a0a;overflow:hidden;max-height:0;transition:max-height .3s ease}
-#mobileMenu.open{max-height:500px}
-#mobileMenu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:16px 1.5rem;border-bottom:1px solid rgba(255,255,255,.07);display:block}
-#mobileMenu a:hover{color:#c8a84b;background:rgba(200,168,75,.06)}
-@media(max-width:960px){.nav-links{display:none!important}#hamburgerBtn{display:flex!important}}
-
-.dropdown{position:relative}
-.dropdown-menu{position:absolute;top:100%;left:0;background:#111;border:1px solid rgba(200,168,75,0.2);min-width:180px;display:none;flex-direction:column;z-index:300}
-.dropdown-menu a{padding:10px 14px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.08em;display:block}
-.dropdown-menu a:hover{background:#222;color:#c8a84b}
-.dropdown-menu.show{display:flex}
 </style>
 </head>
 <body>
@@ -171,15 +148,17 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
     <li role="none"><a href="./about.html" role="menuitem">About the Coach</a></li>
     <li role="none"><a href="./results.html" role="menuitem">Proven Results</a></li>
     <li role="none"><a href="./scheduling.html" role="menuitem">Scheduling</a></li>
-    <li><a href="./services.html">Services</a></li>
+    <li role="none"><a href="./services.html" role="menuitem">Services</a></li>
     <li role="none"><a href="./ambassadors.html" role="menuitem">Ambassadors</a></li>
     <li role="none"><a href="./watch.html" role="menuitem">Watch Us Work!</a></li>
     <li role="none"><a href="./faq.html" role="menuitem">FAQ</a></li>
   </ul>
-  <a class="nav-cart" href="#" aria-label="Shopping cart, 0 items">Cart (0)</a>
-  <button id="hamburgerBtn"><span></span><span></span><span></span></button>
+  
+  <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" onclick="toggleMenu(this)">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-<div id="mobileMenu">
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
   <a href="./index.html">Home</a>
   <a href="./about.html">About the Coach</a>
   <a href="./results.html">Proven Results</a>
@@ -188,8 +167,7 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
   <a href="./ambassadors.html">Ambassadors</a>
   <a href="./watch.html">Watch Us Work!</a>
   <a href="./faq.html">FAQ</a>
-</div>
-
+</nav>
 
 <main>
   <section class="hero" aria-label="Hero">
@@ -273,7 +251,7 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
   <div class="footer-col">
     <h3>Based in Northern Virginia</h3>
     <h3 style="margin-top:1.25rem;">Contact</h3>
-    <a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#284e475d464c495c4147464441464d454946684f45494144064b4745"><span class="__cf_email__" data-cfemail="cfa9a0baa1abaebba6a0a1a3a6a1aaa2aea18fa8a2aea6a3e1aca0a2">[email&#160;protected]</span></a>
     <a href="tel:+15404268544">540-426-8544</a>
     <a href="https://g.page/r/Ca6VzBSQU3vsEAE/review" target="_blank" rel="noopener" style="color:var(--gold);margin-top:.5rem;">Leave a review ↗</a>
   </div>
@@ -288,11 +266,4 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
 </footer>
 <div class="footer-bottom">&copy; 2025 Foundation Lineman. All rights reserved.</div>
 
-
-
-<script>
-var btn=document.getElementById('hamburgerBtn');
-var menu=document.getElementById('mobileMenu');
-btn.onclick=function(){btn.classList.toggle('active');menu.classList.toggle('open');};
-document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){btn.classList.remove('active');menu.classList.remove('open');}});
-</script>
+<script data-cfasync="false" src="/cdn-cgi/scripts

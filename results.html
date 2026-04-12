@@ -58,18 +58,45 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 .footer-col a:hover{color:var(--gold)}
 .footer-bottom{background:var(--black);border-top:1px solid rgba(255,255,255,.07);padding:20px 3rem;text-align:center;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.06em;margin-top:40px}
 @media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.hamburger{display:flex}.results-hero{padding-left:1.5rem;padding-right:1.5rem}.stats-bar{grid-template-columns:repeat(2,1fr)}.athletes-grid{grid-template-columns:1fr}footer{grid-template-columns:1fr;padding:48px 1.5rem 0}}
+
+.dropdown{position:relative}
+.dropdown-menu{position:absolute;top:100%;left:0;background:#111;border:1px solid rgba(200,168,75,0.2);min-width:180px;display:none;flex-direction:column;z-index:300}
+.dropdown-menu a{padding:10px 14px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.dropdown-menu a:hover{background:#222;color:#c8a84b}
+.dropdown-menu.show{display:flex}
+
+#hamburgerBtn{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+#hamburgerBtn span{width:22px;height:2px;background:#fff;display:block;transition:transform .3s,opacity .3s}
+#hamburgerBtn.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#hamburgerBtn.active span:nth-child(2){opacity:0}
+#hamburgerBtn.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#mobileMenu{position:fixed;top:68px;left:0;right:0;z-index:999;background:#0a0a0a;overflow:hidden;max-height:0;transition:max-height .3s ease}
+#mobileMenu.open{max-height:500px}
+#mobileMenu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:16px 1.5rem;border-bottom:1px solid rgba(255,255,255,.07);display:block}
+#mobileMenu a:hover{color:#c8a84b;background:rgba(200,168,75,.06)}
+@media(max-width:960px){.nav-links{display:none!important}#hamburgerBtn{display:flex!important}}
 </style>
 </head>
 <body>
 <nav aria-label="Main navigation">
   <a href="./index.html" aria-label="Foundation Lineman Home"><img class="nav-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman logo" onerror="this.style.display='none'" /></a>
   <ul class="nav-links" role="menubar">
-    <li><a href="./index.html">Home</a></li><li><a href="./about.html">About the Coach</a></li><li><a href="./results.html" class="active">Proven Results</a></li><li><a href="./scheduling.html">Scheduling</a></li><li><a href="./services.html">Services</a></li><li><a href="./ambassadors.html">Ambassadors</a></li><li><a href="./watch.html">Watch Us Work!</a></li><li><a href="./faq.html">FAQ</a></li>
+    <li><a href="./index.html">Home</a></li><li><a href="./about.html">About the Coach</a></li><li><a href="./results.html" class="active">Proven Results</a></li><li><a href="./scheduling.html">Scheduling</a></li><li class="dropdown"><a onclick="toggleDropdown(event)" style="cursor:pointer">Services ▼</a><div class="dropdown-menu" id="servicesDropdown"><a href="./services.html">All Services</a><a href="./services.html#solo">1-on-1 Training</a><a href="./services.html#group">Group Training</a><a href="./scheduling.html">Book a Session</a></div></li><li><a href="./ambassadors.html">Ambassadors</a></li><li><a href="./watch.html">Watch Us Work!</a></li><li><a href="./faq.html">FAQ</a></li>
   </ul>
   <a class="nav-cart" href="#">Cart (0)</a>
-  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
+  <button id="hamburgerBtn"><span></span><span></span><span></span></button>
 </nav>
-<nav class="mobile-menu" id="mobileMenu"><a href="./index.html">Home</a><a href="./about.html">About the Coach</a><a href="./results.html">Proven Results</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a><a href="./ambassadors.html">Ambassadors</a><a href="./watch.html">Watch Us Work!</a><a href="./faq.html">FAQ</a></nav>
+<div id="mobileMenu">
+  <a href="./index.html">Home</a>
+  <a href="./about.html">About the Coach</a>
+  <a href="./results.html">Proven Results</a>
+  <a href="./scheduling.html">Scheduling</a>
+  <a href="./services.html">Services</a>
+  <a href="./ambassadors.html">Ambassadors</a>
+  <a href="./watch.html">Watch Us Work!</a>
+  <a href="./faq.html">FAQ</a>
+</div>
+
 <main>
   <section class="results-hero">
     <p class="section-label">Hall of Champions</p>
@@ -92,7 +119,23 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
   </section>
   <img class="results-img" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/cf7581b7-207d-46da-802b-ced0fa8a702e/Your+paragraph+text.png" alt="Foundation Lineman proven results graphic showing All-Conference athletes" loading="lazy" />
 </main>
-<footer><div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none'" /></div><div class="footer-col"><h3>Contact</h3><a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a><a href="tel:+15404268544">540-426-8544</a></div><div class="footer-col"><h3>Quick Links</h3><a href="./index.html">Home</a><a href="./about.html">About the Coach</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a></div></footer>
+<footer><div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none'" /></div><div class="footer-col"><h3>Contact</h3><a href="/cdn-cgi/l/email-protection#2e48415b404a4f5a4741404247404b434f406e49434f4742004d4143"><span class="__cf_email__" data-cfemail="26404953484247524f49484a4f48434b474866414b474f4a0845494b">[email&#160;protected]</span></a><a href="tel:+15404268544">540-426-8544</a></div><div class="footer-col"><h3>Quick Links</h3><a href="./index.html">Home</a><a href="./about.html">About the Coach</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a></div></footer>
 <div class="footer-bottom">&copy; 2025 Foundation Lineman. All rights reserved.</div>
-<script>function toggleMenu(btn){const m=document.getElementById('mobileMenu');const open=m.classList.toggle('open');btn.setAttribute('aria-expanded',open);}</script>
-</body></html>
+<script data-cfasync="false" sr
+<script>
+function toggleDropdown(e){
+  e.stopPropagation();
+  var menu=document.getElementById('servicesDropdown');
+  menu.classList.toggle('show');
+}
+document.addEventListener('click',function(){
+  var menu=document.getElementById('servicesDropdown');
+  if(menu) menu.classList.remove('show');
+});
+</script>
+<script>
+var btn=document.getElementById('hamburgerBtn');
+var menu=document.getElementById('mobileMenu');
+btn.onclick=function(){btn.classList.toggle('active');menu.classList.toggle('open');};
+document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!menu.contains(e.target)){btn.classList.remove('active');menu.classList.remove('open');}});
+</script>

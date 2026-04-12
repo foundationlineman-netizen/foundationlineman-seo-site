@@ -77,7 +77,6 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
   footer{grid-template-columns:1fr;padding:48px 1.5rem 0}
 }
 
-
 .nav-dropdown{position:relative}
 .nav-toggle{background:none;border:none;color:rgba(255,255,255,0.8);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;padding:4px 8px}
 .nav-toggle:hover{color:#c8a84b}
@@ -86,6 +85,19 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 .dropdown-nav a:hover{background:#1a1a1a;color:#c8a84b}
 .dropdown-nav.show{display:flex}
 </style>
+<script>
+function toggleNavDropdown(){
+  var menu=document.getElementById("navDropdown");
+  menu.classList.toggle("show");
+}
+document.addEventListener("click",function(e){
+  var menu=document.getElementById("navDropdown");
+  var toggle=document.querySelector(".nav-toggle");
+  if(menu&&toggle&&!menu.contains(e.target)&&!toggle.contains(e.target)){
+    menu.classList.remove("show");
+  }
+});
+</script>
 </head>
 <body>
 <nav aria-label="Main navigation">
@@ -150,16 +162,3 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 </footer>
 <div class="footer-bottom">&copy; 2025 Foundation Lineman. All rights reserved.</div>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5
-<script>
-function toggleNavDropdown(){
-  var menu=document.getElementById("navDropdown");
-  menu.classList.toggle("show");
-}
-document.addEventListener("click",function(e){
-  var menu=document.getElementById("navDropdown");
-  var toggle=document.querySelector(".nav-toggle");
-  if(menu&&toggle&&!menu.contains(e.target)&&!toggle.contains(e.target)){
-    menu.classList.remove("show");
-  }
-});
-</script>

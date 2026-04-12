@@ -57,7 +57,6 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 .footer-bottom{background:var(--black);border-top:1px solid rgba(255,255,255,.07);padding:20px 3rem;text-align:center;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.06em;margin-top:40px}
 @media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.sched-hero,.sched-cards,.sched-cta{padding-left:1.5rem;padding-right:1.5rem}.sched-cards{grid-template-columns:1fr}footer{grid-template-columns:1fr;padding:48px 1.5rem 0}}
 
-
 .nav-dropdown{position:relative}
 .nav-toggle{background:none;border:none;color:rgba(255,255,255,0.8);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;padding:4px 8px}
 .nav-toggle:hover{color:#c8a84b}
@@ -66,6 +65,19 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 .dropdown-nav a:hover{background:#1a1a1a;color:#c8a84b}
 .dropdown-nav.show{display:flex}
 </style>
+<script>
+function toggleNavDropdown(){
+  var menu=document.getElementById("navDropdown");
+  menu.classList.toggle("show");
+}
+document.addEventListener("click",function(e){
+  var menu=document.getElementById("navDropdown");
+  var toggle=document.querySelector(".nav-toggle");
+  if(menu&&toggle&&!menu.contains(e.target)&&!toggle.contains(e.target)){
+    menu.classList.remove("show");
+  }
+});
+</script>
 </head>
 <body>
 <nav aria-label="Main navigation">
@@ -94,16 +106,3 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
     <article class="sched-card"><h2>Film Consultation</h2><div class="price">$20</div><p>Submit your game or practice film and receive detailed position-specific feedback on your technique, footwork, and decision-making.</p><ul class="features"><li>Full film review by Coach James</li><li>Written breakdown of strengths and areas to develop</li><li>Personalized drill recommendations</li><li>Best starting point before training</li></ul><a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a></article>
   </section>
   <section class="sched-cta"><h2>READY TO GET TO WORK?</h2><p>Reach out directly — we respond within one business day.</p><div class="contact-pills"><a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a><a class="pill" href="tel:+15404268544"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1
-<script>
-function toggleNavDropdown(){
-  var menu=document.getElementById("navDropdown");
-  menu.classList.toggle("show");
-}
-document.addEventListener("click",function(e){
-  var menu=document.getElementById("navDropdown");
-  var toggle=document.querySelector(".nav-toggle");
-  if(menu&&toggle&&!menu.contains(e.target)&&!toggle.contains(e.target)){
-    menu.classList.remove("show");
-  }
-});
-</script>

@@ -144,6 +144,19 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
 .dropdown-nav a:hover{background:#1a1a1a;color:#c8a84b}
 .dropdown-nav.show{display:flex}
 </style>
+<script>
+function toggleNavDropdown(){
+  var menu=document.getElementById("navDropdown");
+  menu.classList.toggle("show");
+}
+document.addEventListener("click",function(e){
+  var menu=document.getElementById("navDropdown");
+  var toggle=document.querySelector(".nav-toggle");
+  if(menu&&toggle&&!menu.contains(e.target)&&!toggle.contains(e.target)){
+    menu.classList.remove("show");
+  }
+});
+</script>
 </head>
 <body>
 <nav aria-label="Main navigation">
@@ -251,7 +264,7 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
   <div class="footer-col">
     <h3>Based in Northern Virginia</h3>
     <h3 style="margin-top:1.25rem;">Contact</h3>
-    <a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#284e475d464c495c4147464441464d454946684f45494144064b4745"><span class="__cf_email__" data-cfemail="395f564c575d584d5056575550575c545857795e54585055175a5654">[email&#160;protected]</span></a>
     <a href="tel:+15404268544">540-426-8544</a>
     <a href="https://g.page/r/Ca6VzBSQU3vsEAE/review" target="_blank" rel="noopener" style="color:var(--gold);margin-top:.5rem;">Leave a review ↗</a>
   </div>
@@ -268,16 +281,9 @@ footer { background:var(--black);padding:56px 3rem 0;display:grid;grid-template-
 
 (function(){
   var hbtn=document.getElement
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function toggleNavDropdown(){
   var menu=document.getElementById("navDropdown");
   menu.classList.toggle("show");
 }
-document.addEventListener("click",function(e){
-  var menu=document.getElementById("navDropdown");
-  var toggle=document.querySelector(".nav-toggle");
-  if(menu&&toggle&&!menu.contains(e.target)&&!toggle.contains(e.target)){
-    menu.classList.remove("show");
-  }
-});
-</script>
+document.addEvent

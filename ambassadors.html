@@ -71,6 +71,15 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
   .amb-desc{max-height:120px;opacity:1}
   footer{grid-template-columns:1fr;padding:48px 1.5rem 0}
 }
+
+.contact-cta{background:var(--light-gray);padding:60px 3rem;text-align:center}
+.contact-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,70px);color:var(--black);margin-bottom:.75rem}
+.contact-cta p{font-size:14px;color:#666;margin-bottom:2rem;max-width:420px;margin-left:auto;margin-right:auto}
+.contact-pills{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:2rem}
+.pill{display:flex;align-items:center;gap:10px;background:var(--black);color:var(--white);padding:12px 24px;font-size:13px;font-weight:500;text-decoration:none;transition:background .2s}
+.pill:hover{background:#222}
+.pill svg{width:16px;height:16px;fill:var(--gold);flex-shrink:0}
+@media(max-width:960px){.contact-cta{padding-left:1.5rem;padding-right:1.5rem}}
 </style>
 <script>
 function toggleNavDropdown(){var menu=document.getElementById("navDropdown");menu.classList.toggle("show");}
@@ -144,7 +153,22 @@ document.addEventListener("click",function(e){var menu=document.getElementById("
   </section>
 </main>
 
+<section class="contact-cta">
+  <h2>READY TO GET TO WORK?</h2>
+  <p>Reach out directly — we respond within one business day.</p>
+  <div class="contact-pills">
+    <a class="pill" id="cta-email-pill" href="#">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <span id="cta-email-label"></span>
+    </a>
+    <a class="pill" href="tel:+15404268544">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/></svg>
+      (540) 426-8544
+    </a>
+  </div>
+  <script>(function(){var u="foundationlineman",d="gmail.com",e=u+"@"+d;var a=document.getElementById("cta-email-pill");if(a){a.href="mailto:"+e+"?subject=General Inquiry";document.getElementById("cta-email-label").textContent=e;}})();</script>
+</section>
+
 <footer>
   <div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none'" /></div>
-  <div class="footer-col"><h3>Contact</h3><a id="ambEmail" href="#">foundationlineman@gmail.com</a><script>(function(){var u="foundationlineman",d="gmail.com",e=u+"@"+d;var a=document.getElementById("ambEmail");a.href="mailto:"+e;a.textContent=e;})();</script><a href="tel:+15404268544">540-426-8544</a></div>
-  <div class="footer-col"><h3>Quick Links</h3><a href="./index.html">Home</a><a href="./results.html">Proven Results</a><a href="
+  <div class="footer-col"><h3>Contact</h3><a id="ambEmail" href="#"></a><script>(function(){var u="foundationlineman",d="gmail.com",e=u+"@"+d;var a=document.getElementById("ambEmail");a.href="mailto:"+e;

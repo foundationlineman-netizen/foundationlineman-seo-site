@@ -25,11 +25,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97
 .nav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--gold)}
 .nav-cart{color:rgba(255,255,255,.72);font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;text-decoration:none}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;display:block}
-.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;z-index:199;background:#0a0a0a;padding:1.5rem 2rem;flex-direction:column;gap:1.2rem;border-bottom:1px solid rgba(200,168,75,.18)}
-.mobile-menu.open{display:flex}
-.mobile-menu a{color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.nav-dropdown{position:relative}
+.nav-toggle{background:none;border:none;color:rgba(255,255,255,0.8);font-size:18px;cursor:pointer;padding:4px 8px;display:none}
+.nav-toggle:hover{color:#c8a84b}
+.dropdown-menu-list{position:absolute;top:120%;right:0;background:#111;border:1px solid rgba(200,168,75,0.15);display:none;flex-direction:column;min-width:200px;z-index:9999;list-style:none;padding:0;margin:0}
+.dropdown-menu-list a{padding:12px 16px;display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:11px;letter-spacing:0.1em;text-transform:uppercase}
+.dropdown-menu-list a:hover{background:#1a1a1a;color:#c8a84b}
+.dropdown-menu-list.show{display:flex}
+@media(max-width:960px){.nav-links{display:none!important}.nav-toggle{display:block!important}}
 .section-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .btn-primary{display:inline-block;background:var(--gold);color:var(--black);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:13px 30px;transition:background .2s,transform .15s;border:none;cursor:pointer}
 .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
@@ -60,22 +63,36 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 .footer-col a{font-size:13px;color:rgba(255,255,255,.5);line-height:2;display:block;text-decoration:none;transition:color .2s}
 .footer-col a:hover{color:var(--gold)}
 .footer-bottom{background:var(--black);border-top:1px solid rgba(255,255,255,.07);padding:20px 3rem;text-align:center;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.06em;margin-top:40px}
-@media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.hamburger{display:flex}.sched-hero,.sched-cards,.sched-cta{padding-left:1.5rem;padding-right:1.5rem}.sched-cards{grid-template-columns:1fr}footer{grid-template-columns:1fr;padding:48px 1.5rem 0}}
+@media(max-width:960px){nav{padding:0 1.5rem}.sched-hero,.sched-cards,.sched-cta{padding-left:1.5rem;padding-right:1.5rem}.sched-cards{grid-template-columns:1fr}footer{grid-template-columns:1fr;padding:48px 1.5rem 0}}
 
 </style>
+<script>
+function toggleNavDropdown(){var menu=document.getElementById("navDropdown");menu.classList.toggle("show");}
+document.addEventListener("click",function(e){var menu=document.getElementById("navDropdown");var toggle=document.querySelector(".nav-toggle");if(menu&&toggle&&!menu.contains(e.target)&&!toggle.contains(e.target)){menu.classList.remove("show");}});
+</script>
 </head>
 <body>
 <nav aria-label="Main navigation">
   <a href="./index.html" aria-label="Foundation Lineman Home"><img class="nav-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman logo" onerror="this.style.display='none'" /></a>
-  <ul class="nav-links"><li><a href="./index.html">Home</a></li><li><a href="./about.html">About the Coach</a></li><li><a href="./results.html">Proven Results</a></li><li><a href="./scheduling.html" class="active">Scheduling</a></li><li><a href="./services.html">Services</a></li><li><a href="./ambassadors.html">Ambassadors</a></li><li><a href="./watch.html">Watch Us Work!</a></li><li><a href="./faq.html">FAQ</a></li></ul>
-  
-  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="desktopNav"><li><a href="./index.html">Home</a></li><li><a href="./about.html">About the Coach</a></li><li><a href="./results.html">Proven Results</a></li><li><a href="./scheduling.html" class="active">Scheduling</a></li><li><a href="./services.html">Services</a></li><li><a href="./ambassadors.html">Ambassadors</a></li><li><a href="./watch.html">Watch Us Work!</a></li><li><a href="./faq.html">FAQ</a></li></ul>
+  <div class="nav-dropdown">
+    <button class="nav-toggle" onclick="toggleNavDropdown()">&#9776;</button>
+    <ul class="dropdown-menu-list" id="navDropdown">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./about.html">About the Coach</a></li>
+      <li><a href="./results.html">Proven Results</a></li>
+      <li><a href="./scheduling.html">Scheduling</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="./ambassadors.html">Ambassadors</a></li>
+      <li><a href="./watch.html">Watch Us Work!</a></li>
+      <li><a href="./faq.html">FAQ</a></li>
+    </ul>
+  </div>
 </nav>
-<nav class="mobile-menu" id="mobileMenu"><a href="./index.html">Home</a><a href="./about.html">About the Coach</a><a href="./results.html">Proven Results</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a><a href="./ambassadors.html">Ambassadors</a><a href="./watch.html">Watch Us Work!</a><a href="./faq.html">FAQ</a></nav>
 <main>
   <section class="sched-hero"><p class="section-label">Book Your Session</p><h1>SCHEDULE<br /><span>A SESSION</span></h1><p>Start with a free consultation. We'll assess your goals, experience level, and training needs before getting into any paid program.</p></section>
   <section class="sched-cards" aria-label="Session options">
-    <article class="sched-card"><h2>Free Consultation</h2><div class="price">$0<small>free</small></div><p>A no-obligation conversation to discuss your goals, film, and what Foundation Lineman can do for you. No strings attached.</p><ul class="features"><li>1-on-1 with Coach James</li><li>Goal setting and needs assessment</li><li>Program recommendations</li><li>No commitment required</li></ul><a href="mailto:foundationlineman@gmail.com?subject=Free Consultation Request" class="btn-primary">Book Free Consultation</a></article>
-    <article class="sched-card"><h2>Film Consultation</h2><div class="price">$20</div><p>Submit your game or practice film and receive detailed position-specific feedback on your technique, footwork, and decision-making.</p><ul class="features"><li>Full film review by Coach James</li><li>Written breakdown of strengths and areas to develop</li><li>Personalized drill recommendations</li><li>Best starting point before training</li></ul><a href="mailto:foundationlineman@gmail.com?subject=Film Consultation Request" class="btn-primary">Book Film Consultation</a></article>
+    <article class="sched-card"><h2>Free Consultation</h2><div class="price">$0<small>free</small></div><p>A no-obligation conversation to discuss your goals, film, and what Foundation Lineman can do for you. No strings attached.</p><ul class="features"><li>1-on-1 with Coach James</li><li>Goal setting and needs assessment</li><li>Program recommendations</li><li>No commitment required</li></ul><a href="#" class="btn-primary" onclick="(function(a){var u='foundationlineman',d='gmail.com';a.href='mailto:'+u+'@'+d+'?subject=Free+Consultation+Request';})(this);return true;">Book Free Consultation</a></article>
+    <article class="sched-card"><h2>Film Consultation</h2><div class="price">$20</div><p>Submit your game or practice film and receive detailed position-specific feedback on your technique, footwork, and decision-making.</p><ul class="features"><li>Full film review by Coach James</li><li>Written breakdown of strengths and areas to develop</li><li>Personalized drill recommendations</li><li>Best starting point before training</li></ul><a href="#" class="btn-primary" onclick="(function(a){var u='foundationlineman',d='gmail.com';a.href='mailto:'+u+'@'+d+'?subject=Film+Consultation+Request';})(this);return true;">Book Film Consultation</a></article>
   </section>
-  <section class="sched-cta"><h2>READY TO GET TO WORK?</h2><p>Reach out directly — we respond within one business day.</p><div class="contact-pills"><a class="pill" href="mailto:foundationlineman@gmail.com?subject=General Inquiry"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>foundationlineman@gmail.com</a><a class="pill" href="tel:+15404268544"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#c8a84b;flex-shrink:0"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/></svg>(540) 426-8544</a></div></section>
+  <section class="sched-cta"><h2>READY TO GET TO WORK?</h2><p>Reach out directly — we respond within one business day.</p><div class="contact-pills"><a class="pill" id="emailPill" href="#"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span id="emailLabel"></span></a><script>(function(){var u="foundationlineman",d="gmail.com",e=u+"@"+d;var a=document.getElementById("emailPill");a.href="mailto:"+e+"?subject=General Inquiry";document.getElementById("emailLabel").textContent=e;})();</script><a class="pill" href="tel:+15404268544"

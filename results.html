@@ -18,8 +18,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--black:#0a0a0a;--white:#fff;--gold:#c8a84b;--gold-light:#e8c96a;--light-gray:#f4f4f2;--mid-gray:#e0e0de;--text:#1a1a1a}
-body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
+:root{--black:#0a0a0a;--white:#fff;--gold:#c8a84b;--gold-light:#e8c96a;--light-gray:#f4f4f2;--mid-gray:#e0e0de;--text:#c8a84b}
+body{font-family:'Inter',sans-serif;background:var(--black);color:var(--text);overflow-x:hidden}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:68px;border-bottom:1px solid rgba(200,168,75,.18)}
 .nav-logo{height:42px;filter:brightness(0) invert(1);object-fit:contain}
 .nav-links{display:flex;gap:1.6rem;list-style:none}
@@ -47,7 +47,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97
 .athlete-card:hover .athlete-card-overlay{background:linear-gradient(to top,rgba(0,0,0,.95) 0%,rgba(0,0,0,.65) 50%,rgba(0,0,0,.3) 100%)}
 .athlete-card-content{position:absolute;bottom:0;left:0;right:0;padding:32px 28px}
 .athlete-num{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.22em;color:var(--gold);opacity:.7;margin-bottom:6px}
-.athlete-info h2{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.04em;color:var(--white);line-height:1;margin-bottom:4px}
+.athlete-info h2{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.04em;color:var(--gold);line-height:1;margin-bottom:4px}
 .athlete-school{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block}
 .athlete-divider{width:32px;height:2px;background:var(--gold);margin-bottom:12px}
 .athlete-desc{font-size:12px;color:rgba(255,255,255,.7);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .4s ease;opacity:0}
@@ -62,7 +62,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97
 .pill svg{width:16px;height:16px;fill:var(--gold);flex-shrink:0}
 @media(max-width:960px){.contact-cta{padding-left:1.5rem;padding-right:1.5rem}}
 .athlete-num{font-family:'Bebas Neue',sans-serif;font-size:56px;color:var(--gold);line-height:1;min-width:60px}
-.athlete-info h2{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.04em;color:var(--black);margin-bottom:4px}
+.athlete-info h2{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.04em;color:var(--gold);margin-bottom:4px}
 .athlete-school{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .athlete-desc{font-size:13px;color:#555;line-height:1.75;margin-bottom:12px}
 .tag{display:inline-block;background:var(--black);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;margin:3px 3px 0 0}

@@ -60,9 +60,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97
 .stat-card{background:var(--black);padding:20px;text-align:center}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--gold);letter-spacing:.02em}
 .stat-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:4px}
-.about-photo{position:relative}
-.about-photo img{width:100%;object-fit:cover;filter:contrast(1.05)}
-.about-photo::before{content:'';position:absolute;top:-16px;left:-16px;width:55%;height:55%;border:2px solid var(--gold);z-index:-1}
+.about-photo{position:relative;padding:20px 0 0 20px}
+.about-photo img{width:100%;object-fit:cover;filter:contrast(1.05);position:relative;z-index:1;display:block}
+.about-photo::before{content:'';position:absolute;top:0;left:0;right:20px;bottom:-20px;border:2px solid var(--gold);z-index:0}
 footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px}
 .footer-logo{height:38px;filter:brightness(0) invert(1);object-fit:contain}
 .footer-col h3{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
@@ -77,14 +77,18 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
   footer{grid-template-columns:1fr;padding:48px 1.5rem 0}
 }
 
+
 .nav-dropdown{position:relative}
-.nav-toggle{background:none;border:none;color:rgba(255,255,255,0.8);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;padding:4px 8px}
+.nav-toggle{background:none;border:none;color:rgba(255,255,255,0.8);font-size:18px;cursor:pointer;padding:4px 8px;display:none}
 .nav-toggle:hover{color:#c8a84b}
-.dropdown-nav{position:absolute;top:140%;right:0;background:#111;border:1px solid rgba(200,168,75,0.15);display:none;flex-direction:column;min-width:200px;z-index:9999}
-.dropdown-nav a{padding:12px 16px;display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:11px;letter-spacing:0.1em;text-transform:uppercase}
-.dropdown-nav a:hover{background:#1a1a1a;color:#c8a84b}
-.dropdown-nav.show{display:flex}
+.dropdown-menu-list{position:absolute;top:120%;right:0;background:#111;border:1px solid rgba(200,168,75,0.15);display:none;flex-direction:column;min-width:200px;z-index:9999;list-style:none;padding:0;margin:0}
+.dropdown-menu-list a{padding:12px 16px;display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:11px;letter-spacing:0.1em;text-transform:uppercase}
+.dropdown-menu-list a:hover{background:#1a1a1a;color:#c8a84b}
+.dropdown-menu-list.show{display:flex}
+@media(max-width:960px){.nav-links{display:none!important}.nav-toggle{display:block!important}}
+
 </style>
+
 <script>
 function toggleNavDropdown(){
   var menu=document.getElementById("navDropdown");
@@ -105,9 +109,13 @@ document.addEventListener("click",function(e){
     <img class="nav-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman logo" onerror="this.style.display='none';document.querySelector('.nav-logo-fb').style.display='block';" />
     <span class="nav-logo-fb">FOUNDATION LINEMAN</span>
   </a>
-  <div class="nav-dropdown">
-  <button class="nav-toggle" onclick="toggleNavDropdown()">&#9776; Menu</button>
-  <ul class="nav-links dropdown-nav" id="navDropdown">
+  
+  
+  
+<ul class="nav-links" id="desktopNav"><li><a href="./index.html">Home</a></li><li><a href="./about.html" class="active">About the Coach</a></li><li><a href="./results.html">Proven Results</a></li><li><a href="./scheduling.html">Scheduling</a></li><li><a href="./services.html">Services</a></li><li><a href="./ambassadors.html">Ambassadors</a></li><li><a href="./watch.html">Watch Us Work!</a></li><li><a href="./faq.html">FAQ</a></li></ul>
+<div class="nav-dropdown">
+  <button class="nav-toggle" onclick="toggleNavDropdown()">&#9776;</button>
+  <ul class="dropdown-menu-list" id="navDropdown">
     <li><a href="./index.html">Home</a></li>
     <li><a href="./about.html">About the Coach</a></li>
     <li><a href="./results.html">Proven Results</a></li>
@@ -118,8 +126,6 @@ document.addEventListener("click",function(e){
     <li><a href="./faq.html">FAQ</a></li>
   </ul>
 </div>
-  
-  
 </nav>
 
 
@@ -157,8 +163,5 @@ document.addEventListener("click",function(e){
 
 <footer>
   <div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none';" /></div>
-  <div class="footer-col"><h3>Contact</h3><a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a><a href="tel:+15404268544">540-426-8544</a></div>
-  <div class="footer-col"><h3>Quick Links</h3><a href="./index.html">Home</a><a href="./results.html">Proven Results</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a></div>
-</footer>
-<div class="footer-bottom">&copy; 2025 Foundation Lineman. All rights reserved.</div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5
+  <div class="footer-col"><h3>Contact</h3><a href="/cdn-cgi/l/email-protection#d6b0b9a3b8b2b7a2bfb9b8babfb8b3bbb7b896b1bbb7bfbaf8b5b9bb"><span class="__cf_email__" data-cfemail="f4929b819a9095809d9b9a989d9a9199959ab49399959d98da979b99">[email&#160;protected]</span></a><a href="tel:+15404268544">540-426-8544</a></div>
+  <div class="footer-col"><h3>Quick Links</h3><a href="./index.html">Home</a><a href="./results.html">Proven Results</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a></div

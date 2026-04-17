@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><!-- v2 -->
 <head>
-<meta charset="UTF-8" />
-<link rel="icon" type="image/png" href="./favicon.png" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Watch Us Work | Foundation Lineman — Offensive Line Training Videos v2</title>
 <meta name="description" content="Watch Foundation Lineman in action. Training videos featuring D1, D2, and D3 IOL workouts, high school group sessions, winter break compilations, and more from Northern Virginia's premier OL program." />
 <meta name="keywords" content="Foundation Lineman videos, offensive line training videos, OL workout videos, IOL training footage, Northern Virginia football training, lineman workout compilation" />
@@ -26,6 +25,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97
 .nav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--gold)}
 .nav-cart{color:rgba(255,255,255,.72);font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;text-decoration:none}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;display:block}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;z-index:199;background:#0a0a0a;padding:1.5rem 2rem;flex-direction:column;gap:1.2rem;border-bottom:1px solid rgba(200,168,75,.18)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 .section-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .watch-hero{background:var(--black);padding:100px 3rem 80px;margin-top:68px;position:relative;overflow:hidden}
 .watch-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 40%,rgba(200,168,75,.06) 0%,transparent 60%);pointer-events:none}
@@ -48,94 +52,51 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 .footer-col a{font-size:13px;color:rgba(255,255,255,.5);line-height:2;display:block;text-decoration:none;transition:color .2s}
 .footer-col a:hover{color:var(--gold)}
 .footer-bottom{background:var(--black);border-top:1px solid rgba(255,255,255,.07);padding:20px 3rem;text-align:center;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.06em;margin-top:40px}
-@media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.watch-hero,.video-grid{padding-left:1.5rem;padding-right:1.5rem}.video-grid{grid-template-columns:repeat(2,1fr)}footer{grid-template-columns:1fr;padding:48px 1.5rem 0}}
+.ig-banner{background:var(--black);padding:0 3rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(200,168,75,.12)}
+.ig-banner-inner{display:flex;align-items:center;gap:14px}
+.ig-icon{width:32px;height:32px;flex-shrink:0}
+.ig-banner p{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.ig-banner p span{color:var(--gold)}
+.ig-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+.ig-btn:hover{background:var(--gold);color:var(--black)}
+@media(max-width:960px){.ig-banner{padding:0 1.5rem;flex-wrap:wrap;gap:.75rem;padding-top:20px;padding-bottom:20px}}
+@media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.hamburger{display:flex}.watch-hero,.video-grid{padding-left:1.5rem;padding-right:1.5rem}.video-grid{grid-template-columns:repeat(2,1fr)}footer{grid-template-columns:1fr;padding:48px 1.5rem 0}}
 @media(max-width:480px){.video-grid{grid-template-columns:1fr}}
-
-
-.nav-dropdown{position:relative}
-.nav-toggle{background:none;border:none;color:rgba(255,255,255,0.8);font-size:18px;cursor:pointer;padding:4px 8px;display:none}
-.nav-toggle:hover{color:#c8a84b}
-.dropdown-menu-list{position:absolute;top:120%;right:0;background:#111;border:1px solid rgba(200,168,75,0.15);display:none;flex-direction:column;min-width:200px;z-index:9999;list-style:none;padding:0;margin:0}
-.dropdown-menu-list a{padding:12px 16px;display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:11px;letter-spacing:0.1em;text-transform:uppercase}
-.dropdown-menu-list a:hover{background:#1a1a1a;color:#c8a84b}
-.dropdown-menu-list.show{display:flex}
-@media(max-width:960px){.nav-links{display:none!important}.nav-toggle{display:block!important}}
-
-
-.contact-cta{background:var(--light-gray);padding:60px 3rem;text-align:center}
-.contact-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,70px);color:var(--black);margin-bottom:.75rem}
-.contact-cta p{font-size:14px;color:#666;margin-bottom:2rem;max-width:420px;margin-left:auto;margin-right:auto}
-.contact-pills{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:2rem}
-.pill{display:flex;align-items:center;gap:10px;background:var(--black);color:var(--white);padding:12px 24px;font-size:13px;font-weight:500;text-decoration:none;transition:background .2s}
-.pill:hover{background:#222}
-.pill svg{width:16px;height:16px;fill:var(--gold);flex-shrink:0}
-@media(max-width:960px){.contact-cta{padding-left:1.5rem;padding-right:1.5rem}}
 </style>
-
-<script>
-function toggleNavDropdown(){
-  var menu=document.getElementById("navDropdown");
-  menu.classList.toggle("show");
-}
-document.addEventListener("click",function(e){
-  var menu=document.getElementById("navDropdown");
-  var toggle=document.querySelector(".nav-toggle");
-  if(menu&&toggle&&!menu.contains(e.target)&&!toggle.contains(e.target)){
-    menu.classList.remove("show");
-  }
-});
-</script>
 </head>
 <body>
 <nav aria-label="Main navigation">
   <a href="./index.html" aria-label="Foundation Lineman Home"><img class="nav-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman logo" onerror="this.style.display='none'" /></a>
-  
-  
-  
-<ul class="nav-links" id="desktopNav"><li><a href="./index.html">Home</a></li><li><a href="./about.html">About the Coach</a></li><li><a href="./results.html">Proven Results</a></li><li><a href="./scheduling.html">Scheduling</a></li><li><a href="./services.html">Services</a></li><li><a href="./ambassadors.html">Ambassadors</a></li><li><a href="./watch.html" class="active">Watch Us Work!</a></li><li><a href="./faq.html">FAQ</a></li></ul>
-<div class="nav-dropdown">
-  <button class="nav-toggle" onclick="toggleNavDropdown()">&#9776;</button>
-  <ul class="dropdown-menu-list" id="navDropdown">
-    <li><a href="./index.html">Home</a></li>
-    <li><a href="./about.html">About the Coach</a></li>
-    <li><a href="./results.html">Proven Results</a></li>
-    <li><a href="./scheduling.html">Scheduling</a></li>
-    <li><a href="./services.html">Services</a></li>
-    <li><a href="./ambassadors.html">Ambassadors</a></li>
-    <li><a href="./watch.html">Watch Us Work!</a></li>
-    <li><a href="./faq.html">FAQ</a></li>
-  </ul>
-</div>
+  <ul class="nav-links"><li><a href="./index.html">Home</a></li><li><a href="./about.html">About the Coach</a></li><li><a href="./results.html">Proven Results</a></li><li><a href="./scheduling.html">Scheduling</a></li><li><a href="./services.html">Services</a></li><li><a href="./ambassadors.html">Ambassadors</a></li><li><a href="./watch.html" class="active">Watch Us Work!</a></li><li><a href="./faq.html">FAQ</a></li></ul>
+  <a class="nav-cart" href="#">Cart (0)</a>
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
 </nav>
-
+<nav class="mobile-menu" id="mobileMenu"><a href="./index.html">Home</a><a href="./about.html">About the Coach</a><a href="./results.html">Proven Results</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a><a href="./ambassadors.html">Ambassadors</a><a href="./watch.html">Watch Us Work!</a><a href="./faq.html">FAQ</a></nav>
 <main>
   <section class="watch-hero"><p class="section-label">Film Room</p><h1>IT ALL<br /><span>BEGINS HERE</span></h1></section>
-  <section class="video-grid" aria-label="Training videos">
-    <a class="video-card" href="https://www.foundationlineman.com/watch-us-work/v/d1-d3-iol-workout" target="_blank" rel="noopener" aria-label="Watch D1 and D3 IOL Workout video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/030ad071-1d27-4094-819c-8a3d6f2c27d6/thumbnail" alt="D1 and D3 IOL offensive line workout thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">College Level</p><h2>D1 &amp; D3 IOL Workout</h2></div></a>
-    <a class="video-card" href="https://www.foundationlineman.com/watch-us-work/v/winter-break-compilation" target="_blank" rel="noopener" aria-label="Watch Winter Break Compilation video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/c8f38cb4-3b5b-4f64-8288-0e8cae05a463/thumbnail" alt="Winter break offensive line training compilation thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">Compilation</p><h2>Winter Break Compilation</h2></div></a>
-    <a class="video-card" href="https://www.foundationlineman.com/watch-us-work/v/watch-us-work" target="_blank" rel="noopener" aria-label="Watch Trainee Season Mix video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/363a2fff-2168-4395-bc8b-73d343c31fb0/thumbnail" alt="Foundation Lineman trainee season highlight mix thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">Season Mix</p><h2>Trainee Season Mix</h2></div></a>
-    <a class="video-card" href="https://www.foundationlineman.com/watch-us-work/v/tips-for-better-focus-cc7rp-m59hn" target="_blank" rel="noopener" aria-label="Watch Mixtape video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/1b01948a-d7a4-4272-bf6c-bd7a34d91778/thumbnail" alt="Foundation Lineman training mixtape thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">Highlight</p><h2>Mixtape</h2></div></a>
-    <a class="video-card" href="https://www.foundationlineman.com/watch-us-work/v/30-minute-bedtime-unwind-l6ma9-d5ymk" target="_blank" rel="noopener" aria-label="Watch High School Group Session video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/f985bad6-e14e-4e15-a470-bc1f3ef04a08/thumbnail" alt="High school offensive lineman group training session thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">Group Session</p><h2>High School Group Session</h2></div></a>
-    <a class="video-card" href="https://www.foundationlineman.com/watch-us-work/v/15-minute-midday-routine-tfp7w-8jtw6" target="_blank" rel="noopener" aria-label="Watch Division 2 IOL Workout video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/7194e612-5f52-4435-ab55-90093375c197/thumbnail" alt="Division 2 interior offensive lineman workout thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">College Level</p><h2>Division 2 IOL Workout</h2></div></a>
-    <a class="video-card" href="https://www.foundationlineman.com/watch-us-work/v/30-minute-morning-flow-k86ea-ywxm9" target="_blank" rel="noopener" aria-label="Watch High School Group Session 2 video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/973e2b96-d8ba-46da-8352-2150a43e9946/thumbnail" alt="Second high school offensive line group training session thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">Group Session</p><h2>High School Group Session 2</h2></div></a>
-    <a class="video-card" href="https://www.foundationlineman.com/watch-us-work/v/practicing-mindfulness-atxk6-xjspt" target="_blank" rel="noopener" aria-label="Watch Division 1 OT Workout video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/5bb8dd56-d17f-4fbf-bd20-c4fc0b79f4ab/thumbnail" alt="Division 1 offensive tackle workout thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">College Level</p><h2>Division 1 OT Workout</h2></div></a>
-    <a class="video-card" href="https://www.foundationlineman.com/watch-us-work/v/5-tips-for-beginners-mepfr-9a3t5" target="_blank" rel="noopener" aria-label="Watch Mixed Group Workout video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/5c8b550f-3e2f-4f5a-af50-1a90fd89ce9d/thumbnail" alt="Mixed group offensive line training workout thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">Group Session</p><h2>Mixed Group Workout</h2></div></a>
-  </section>
-</main>
-<section class="contact-cta">
-  <h2>READY TO GET TO WORK?</h2>
-  <p>Reach out directly — we respond within one business day.</p>
-  <div class="contact-pills">
-    <a class="pill" id="cta-email-pill" href="#">
-      <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      <span id="cta-email-label"></span>
-    </a>
-    <a class="pill" href="tel:+15404268544">
-      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/></svg>
-      (540) 426-8544
+  <div class="ig-banner">
+    <div class="ig-banner-inner">
+      <svg class="ig-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#c8a84b" stroke-width="1.5" fill="none"/><circle cx="12" cy="12" r="4" stroke="#c8a84b" stroke-width="1.5" fill="none"/><circle cx="17.5" cy="6.5" r="1" fill="#c8a84b"/></svg>
+      <p>More clips on Instagram &mdash; <span>@FoundationLineman</span></p>
+    </div>
+    <a class="ig-btn" href="https://www.instagram.com/FoundationLineman/reels/" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Watch Reels
     </a>
   </div>
-  <script>(function(){var u="foundationlineman",d="gmail.com",e=u+"@"+d;var a=document.getElementById("cta-email-pill");if(a){a.href="mailto:"+e+"?subject=General Inquiry";document.getElementById("cta-email-label").textContent=e;}})();</script>
-</section>
-
-<footer><div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none'" /></div><div class="footer-col"><h3>Contact</h3><a id="cfe-watch-1" href="#" class="cf-email-fix"></a><a href="tel:+15404268544">540-426-8544</a></div><div class="footer-col"><h3>Quick Links</h3><a href="./index.html">Home</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a><a href="./faq.html">FAQ</a></di
+  <section class="video-grid" aria-label="Training videos">
+    <a class="video-card" href="https://www.instagram.com/foundationlineman/reel/DL_DQrOgvnN/" target="_blank" rel="noopener" aria-label="Watch D1 and D3 IOL Workout video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/030ad071-1d27-4094-819c-8a3d6f2c27d6/thumbnail" alt="D1 and D3 IOL offensive line workout thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">College Level</p><h2>D1 &amp; D3 IOL Workout</h2></div></a>
+    <a class="video-card" href="https://www.instagram.com/foundationlineman/reel/DTGi3TPkXhm/" target="_blank" rel="noopener" aria-label="Watch Winter Break Compilation video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/c8f38cb4-3b5b-4f64-8288-0e8cae05a463/thumbnail" alt="Winter break offensive line training compilation thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">Compilation</p><h2>Winter Break Compilation</h2></div></a>
+    <a class="video-card" href="https://www.instagram.com/foundationlineman/reel/DRLHhqoj2j9/" target="_blank" rel="noopener" aria-label="Watch Trainee Season Mix video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/363a2fff-2168-4395-bc8b-73d343c31fb0/thumbnail" alt="Foundation Lineman trainee season highlight mix thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">Season Mix</p><h2>Trainee Season Mix</h2></div></a>
+    <a class="video-card" href="https://www.instagram.com/foundationlineman/reel/DMN8VgvPL1m/" target="_blank" rel="noopener" aria-label="Watch Mixtape video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/1b01948a-d7a4-4272-bf6c-bd7a34d91778/thumbnail" alt="Foundation Lineman training mixtape thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">Highlight</p><h2>Mixtape</h2></div></a>
+    <a class="video-card" href="https://www.instagram.com/foundationlineman/reel/DLxnAKCA-lp/" target="_blank" rel="noopener" aria-label="Watch High School Group Session video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/f985bad6-e14e-4e15-a470-bc1f3ef04a08/thumbnail" alt="High school offensive lineman group training session thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">Group Session</p><h2>High School Group Session</h2></div></a>
+    <a class="video-card" href="https://www.instagram.com/foundationlineman/reel/DLvYr37xKJX/" target="_blank" rel="noopener" aria-label="Watch Division 2 IOL Workout video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/7194e612-5f52-4435-ab55-90093375c197/thumbnail" alt="Division 2 interior offensive lineman workout thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">College Level</p><h2>Division 2 IOL Workout</h2></div></a>
+    <a class="video-card" href="https://www.instagram.com/foundationlineman/reel/DMLIwDqAp0E/" target="_blank" rel="noopener" aria-label="Watch High School Group Session 2 video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/973e2b96-d8ba-46da-8352-2150a43e9946/thumbnail" alt="Second high school offensive line group training session thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">Group Session</p><h2>High School Group Session 2</h2></div></a>
+    <a class="video-card" href="https://www.instagram.com/foundationlineman/reel/DMdM4qWAlwm/" target="_blank" rel="noopener" aria-label="Watch Division 1 OT Workout video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/5bb8dd56-d17f-4fbf-bd20-c4fc0b79f4ab/thumbnail" alt="Division 1 offensive tackle workout thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">College Level</p><h2>Division 1 OT Workout</h2></div></a>
+    <a class="video-card" href="https://www.instagram.com/foundationlineman/reel/DMDcoh2g4cr/" target="_blank" rel="noopener" aria-label="Watch Mixed Group Workout video"><img class="video-thumb" src="https://video.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/5c8b550f-3e2f-4f5a-af50-1a90fd89ce9d/thumbnail" alt="Mixed group offensive line training workout thumbnail" loading="lazy" width="600" height="375" /><div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="video-info"><p class="video-tag">Group Session</p><h2>Mixed Group Workout</h2></div></a>
+  </section>
+</main>
+<footer><div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none'" /></div><div class="footer-col"><h3>Contact</h3><a href="mailto:foundationlineman@gmail.com">foundationlineman@gmail.com</a><a href="tel:+15404268544">540-426-8544</a></div><div class="footer-col"><h3>Quick Links</h3><a href="./index.html">Home</a><a href="./scheduling.html">Scheduling</a><a href="./services.html">Services</a><a href="./faq.html">FAQ</a></div></footer>
+<div class="footer-bottom">&copy; 2025 Foundation Lineman. All rights reserved.</div>
+<script>function toggleMenu(btn){const m=document.getElementById('mobileMenu');const open=m.classList.toggle('open');btn.setAttribute('aria-expanded',open);}</script>
+</body></html>

@@ -40,7 +40,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--black:#0a0a0a;--white:#fff;--gold:#c8a84b;--gold-light:#e8c96a;--light-gray:#f4f4f2;--mid-gray:#e0e0de;--text:#1a1a1a}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--black);color:var(--text);overflow-x:hidden}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:68px;border-bottom:1px solid rgba(200,168,75,.18)}
 .nav-logo{height:42px;filter:brightness(0) invert(1);object-fit:contain}
 .nav-logo-fb{display:none;font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--gold);letter-spacing:.08em}
@@ -52,13 +52,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97
 .section-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .btn-primary{display:inline-block;background:var(--gold);color:var(--black);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:13px 30px;transition:background .2s,transform .15s;border:none;cursor:pointer}
 .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;padding:100px 3rem;margin-top:68px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;padding:100px 3rem;margin-top:68px;position:relative;overflow:hidden}
+.about-grid::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(200,168,75,.07) 0%,transparent 60%);pointer-events:none}
 .about-text .section-label{margin-bottom:.75rem}
-.about-text h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,7vw,90px);color:var(--black);line-height:.92;margin-bottom:2rem}
+.about-text h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,7vw,90px);color:var(--white);line-height:.92;margin-bottom:2rem}
 .about-text h1 span{color:var(--gold)}
-.about-text p{font-size:15px;line-height:1.9;color:#444;margin-bottom:1.25rem}
+.about-text p{font-size:15px;line-height:1.9;color:rgba(255,255,255,.6);margin-bottom:1.25rem}
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:2.5rem 0}
-.stat-card{background:var(--black);padding:20px;text-align:center}
+.stat-card{background:#111;padding:20px;text-align:center;border:1px solid rgba(200,168,75,.15)}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--gold);letter-spacing:.02em}
 .stat-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:4px}
 .about-photo{position:relative}
@@ -88,9 +89,9 @@ footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-co
 @media(max-width:960px){.nav-links{display:none!important}.nav-toggle{display:block!important}}
 
 
-.contact-cta{background:var(--light-gray);padding:60px 3rem;text-align:center}
-.contact-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,70px);color:var(--black);margin-bottom:.75rem}
-.contact-cta p{font-size:14px;color:#666;margin-bottom:2rem;max-width:420px;margin-left:auto;margin-right:auto}
+.contact-cta{background:var(--black);padding:80px 3rem;text-align:center;border-top:3px solid var(--gold)}
+.contact-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,70px);color:var(--white);margin-bottom:.75rem}
+.contact-cta p{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:2rem;max-width:420px;margin-left:auto;margin-right:auto}
 .contact-pills{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:2rem}
 .pill{display:flex;align-items:center;gap:10px;background:var(--black);color:var(--white);padding:12px 24px;font-size:13px;font-weight:500;text-decoration:none;transition:background .2s}
 .pill:hover{background:#222}

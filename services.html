@@ -36,7 +36,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97
 .services-hero-overlay h1 span{color:var(--gold)}
 .services-hero-overlay p{max-width:480px;font-size:14px;color:rgba(255,255,255,.65);line-height:1.8;margin-top:1rem}
 .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:80px 3rem}
-.service-card{background:var(--black);overflow:hidden}
+.service-card{background:#111;overflow:hidden;border:1px solid rgba(200,168,75,.12)}
 .service-card-img{width:100%;aspect-ratio:16/10;object-fit:cover;opacity:.85;transition:opacity .3s,transform .4s;display:block}
 .service-card:hover .service-card-img{opacity:.95;transform:scale(1.02)}
 .service-card-body{padding:28px}
@@ -46,11 +46,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97
 .price-sale{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--gold)}
 .price-orig{font-size:14px;color:rgba(255,255,255,.35);text-decoration:line-through}
 .service-card-body p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:20px}
-.contact-section{background:var(--light-gray);padding:80px 3rem}
-.contact-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,6vw,70px);color:var(--black);margin-bottom:.75rem}
-.contact-section p{font-size:14px;color:#666;margin-bottom:2.5rem;max-width:480px}
+.contact-section{background:var(--black);padding:80px 3rem;border-top:3px solid var(--gold)}
+.contact-section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,6vw,70px);color:var(--white);margin-bottom:.75rem}
+.contact-section p{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:2.5rem;max-width:480px}
 .contact-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:680px}
-.contact-form input,.contact-form textarea{width:100%;padding:14px 16px;background:var(--white);border:1px solid var(--mid-gray);font-family:'Inter',sans-serif;font-size:13px;color:var(--text);outline:none;transition:border-color .2s}
+.contact-form input,.contact-form textarea{width:100%;padding:14px 16px;background:#111;border:1px solid rgba(255,255,255,.1);font-family:'Inter',sans-serif;font-size:13px;color:var(--white);outline:none;transition:border-color .2s}
 .contact-form input:focus,.contact-form textarea:focus{border-color:var(--gold)}
 .contact-form textarea{grid-column:1/-1;resize:vertical;min-height:120px}
 .full{grid-column:1/-1}
@@ -158,12 +158,12 @@ document.addEventListener("click",function(e){
   </section>
 
   <!-- Individual Session Pricing -->
-  <section style="padding:0 3rem 80px;background:var(--white)" aria-label="Individual session pricing">
-    <p class="section-label" style="padding-top:0">Individual Sessions</p>
-    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,60px);color:var(--black);margin-bottom:40px">A LA CARTE <span style="color:var(--gold)">PRICING</span></h2>
+  <section style="padding:0 3rem 80px;background:var(--black);border-top:1px solid rgba(200,168,75,.12)" aria-label="Individual session pricing">
+    <p class="section-label" style="padding-top:60px">Individual Sessions</p>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,60px);color:var(--white);margin-bottom:40px">A LA CARTE <span style="color:var(--gold)">PRICING</span></h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;align-items:stretch;">
 
-      <div style="background:var(--black);padding:28px;display:flex;flex-direction:column;">
+      <div style="background:#111;padding:28px;display:flex;flex-direction:column;border:1px solid rgba(200,168,75,.12);">
         <span style="display:inline-block;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;margin-bottom:12px">Evaluation</span>
         <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);margin-bottom:8px">Film Session</h3>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:var(--gold);margin-bottom:12px">$20</div>
@@ -171,7 +171,7 @@ document.addEventListener("click",function(e){
       <a class="add-to-cart" href="https://buy.stripe.com/8x29AS7l05KW2Pq5R6cZa07" target="_blank" rel="noopener" style="display:block;background:transparent;color:#c8a84b;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;border:1px solid #c8a84b;cursor:pointer;margin-top:12px;text-align:center;text-decoration:none">Buy Now</a>
       </div>
 
-      <div style="background:var(--black);padding:28px;display:flex;flex-direction:column;">
+      <div style="background:#111;padding:28px;display:flex;flex-direction:column;border:1px solid rgba(200,168,75,.12);">
         <span style="display:inline-block;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;margin-bottom:12px">Solo</span>
         <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);margin-bottom:8px">1 Solo Session</h3>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:var(--gold);margin-bottom:12px">$40</div>
@@ -179,7 +179,7 @@ document.addEventListener("click",function(e){
       <a class="add-to-cart" href="https://buy.stripe.com/28EfZg8p47T4blW5R6cZa06" target="_blank" rel="noopener" style="display:block;background:transparent;color:#c8a84b;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;border:1px solid #c8a84b;cursor:pointer;margin-top:12px;text-align:center;text-decoration:none">Buy Now</a>
       </div>
 
-      <div style="background:var(--black);padding:28px;display:flex;flex-direction:column;">
+      <div style="background:#111;padding:28px;display:flex;flex-direction:column;border:1px solid rgba(200,168,75,.12);">
         <span style="display:inline-block;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;margin-bottom:12px">Group</span>
         <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);margin-bottom:8px">1 Group Session</h3>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:var(--gold);margin-bottom:12px">$25</div>
@@ -187,7 +187,7 @@ document.addEventListener("click",function(e){
       <a class="add-to-cart" href="https://buy.stripe.com/7sY3cuaxc0qC61Ca7mcZa05" target="_blank" rel="noopener" style="display:block;background:transparent;color:#c8a84b;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;border:1px solid #c8a84b;cursor:pointer;margin-top:12px;text-align:center;text-decoration:none">Buy Now</a>
       </div>
 
-      <div style="background:var(--black);padding:28px;display:flex;flex-direction:column;">
+      <div style="background:#111;padding:28px;display:flex;flex-direction:column;border:1px solid rgba(200,168,75,.12);">
         <span style="display:inline-block;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;margin-bottom:12px">Solo Bundle</span>
         <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);margin-bottom:8px">5 Solo Sessions</h3>
         <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:12px">
@@ -198,7 +198,7 @@ document.addEventListener("click",function(e){
       <a class="add-to-cart" href="https://buy.stripe.com/9B63cu6gWgpA89KdjycZa04" target="_blank" rel="noopener" style="display:block;background:transparent;color:#c8a84b;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;border:1px solid #c8a84b;cursor:pointer;margin-top:12px;text-align:center;text-decoration:none">Buy Now</a>
       </div>
 
-      <div style="background:var(--black);padding:28px;display:flex;flex-direction:column;">
+      <div style="background:#111;padding:28px;display:flex;flex-direction:column;border:1px solid rgba(200,168,75,.12);">
         <span style="display:inline-block;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;margin-bottom:12px">Group Bundle</span>
         <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);margin-bottom:8px">5 Group Sessions</h3>
         <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:12px">
@@ -209,7 +209,7 @@ document.addEventListener("click",function(e){
       <a class="add-to-cart" href="https://buy.stripe.com/bJe8wOdJoehsdu4enCcZa03" target="_blank" rel="noopener" style="display:block;background:transparent;color:#c8a84b;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;border:1px solid #c8a84b;cursor:pointer;margin-top:12px;text-align:center;text-decoration:none">Buy Now</a>
       </div>
 
-      <div style="background:var(--black);padding:28px;display:flex;flex-direction:column;">
+      <div style="background:#111;padding:28px;display:flex;flex-direction:column;border:1px solid rgba(200,168,75,.12);">
         <span style="display:inline-block;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;margin-bottom:12px">Solo Bundle</span>
         <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);margin-bottom:8px">8 Solo Sessions</h3>
         <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:12px">
@@ -220,7 +220,7 @@ document.addEventListener("click",function(e){
       <a class="add-to-cart" href="https://buy.stripe.com/8x2aEWcFkehsfCc3IYcZa02" target="_blank" rel="noopener" style="display:block;background:transparent;color:#c8a84b;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;border:1px solid #c8a84b;cursor:pointer;margin-top:12px;text-align:center;text-decoration:none">Buy Now</a>
       </div>
 
-      <div style="background:var(--black);padding:28px;display:flex;flex-direction:column;">
+      <div style="background:#111;padding:28px;display:flex;flex-direction:column;border:1px solid rgba(200,168,75,.12);">
         <span style="display:inline-block;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;margin-bottom:12px">Group Bundle</span>
         <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);margin-bottom:8px">8 Group Sessions</h3>
         <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:12px">
@@ -231,7 +231,7 @@ document.addEventListener("click",function(e){
       <a class="add-to-cart" href="https://buy.stripe.com/4gMdR8eNs5KWcq0frGcZa01" target="_blank" rel="noopener" style="display:block;background:transparent;color:#c8a84b;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;border:1px solid #c8a84b;cursor:pointer;margin-top:12px;text-align:center;text-decoration:none">Buy Now</a>
       </div>
 
-      <div style="background:var(--black);padding:28px;display:flex;flex-direction:column;">
+      <div style="background:#111;padding:28px;display:flex;flex-direction:column;border:1px solid rgba(200,168,75,.12);">
         <span style="display:inline-block;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;margin-bottom:12px">Group Bundle</span>
         <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);margin-bottom:8px">10 Group Sessions</h3>
         <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:12px">

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/png" href="./favicon.png" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Merchandise | Foundation Lineman</title>
+<meta name="description" content="Shop the Foundation Lineman clothing collection. Poly and cotton blend long sleeves, short sleeves, and sweatpants." />
+<link rel="canonical" href="https://www.foundationlineman.net/merch" />
+<meta property="og:type" content="website" /><meta property="og:url" content="https://www.foundationlineman.net/merch" />
+<meta property="og:title" content="Merchandise | Foundation Lineman" />
+<meta property="og:description" content="Shop the Foundation Lineman clothing collection." />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#0a0a0a;--white:#fff;--gold:#c8a84b;--gold-light:#e8c96a;--light-gray:#f4f4f2;--mid-gray:#e0e0de;--text:#1a1a1a}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:68px;border-bottom:1px solid rgba(200,168,75,.18)}
+.nav-logo{height:42px;filter:brightness(0) invert(1);object-fit:contain}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-dropdown{position:relative}
+.nav-toggle{background:none;border:none;color:rgba(255,255,255,0.8);font-size:18px;cursor:pointer;padding:4px 8px;display:none}
+.nav-toggle:hover{color:#c8a84b}
+.dropdown-menu-list{position:absolute;top:120%;right:0;background:#111;border:1px solid rgba(200,168,75,0.15);display:none;flex-direction:column;min-width:200px;z-index:9999;list-style:none;padding:0;margin:0}
+.dropdown-menu-list a{padding:12px 16px;display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:11px;letter-spacing:0.1em;text-transform:uppercase}
+.dropdown-menu-list a:hover{background:#1a1a1a;color:#c8a84b}
+.dropdown-menu-list.show{display:flex}
+@media(max-width:960px){.nav-links{display:none!important}.nav-toggle{display:block!important}}
+.merch-hero{background:var(--black);padding:140px 3rem 60px;text-align:center}
+.merch-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(50px,8vw,90px);color:var(--white);line-height:.9}
+.merch-hero h1 span{color:var(--gold)}
+.merch-hero .subhead{color:rgba(255,255,255,.6);margin-top:1rem;font-size:15px}
+.merch-hero .merch-note{color:var(--gold);font-size:13px;margin-top:.75rem}
+.merch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1100px;margin:0 auto;padding:60px 3rem 100px}
+.merch-card{background:var(--black);border:1px solid rgba(200,168,75,.35);border-radius:4px;padding:16px;display:flex;flex-direction:column}
+.merch-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:4px;margin-bottom:14px;background:#1a1a1a}
+.merch-card h3{color:var(--white);font-size:1.05rem;margin-bottom:6px}
+.merch-desc{font-size:.85rem;color:rgba(255,255,255,.55);margin-bottom:10px;flex-grow:1;line-height:1.6}
+.merch-price{color:var(--gold);font-weight:bold;margin-bottom:12px}
+.merch-btn{display:block;text-align:center;padding:11px 0;background:var(--gold);color:var(--black);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:3px;transition:background .2s}
+.merch-btn:hover{background:var(--gold-light)}
+footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px}
+.footer-logo{height:38px;filter:brightness(0) invert(1);object-fit:contain}
+.footer-col h3{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.footer-col a{font-size:13px;color:rgba(255,255,255,.5);line-height:2;display:block;text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{background:var(--black);border-top:1px solid rgba(255,255,255,.07);padding:20px 3rem;text-align:center;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.06em;margin-top:40px}
+@media(max-width:960px){nav{padding:0 1.5rem}.merch-hero,.merch-grid{padding-left:1.5rem;padding-right:1.5rem}footer{grid-template-columns:1fr;padding:48px 1.5rem 0}}
+</style>
+<script>
+function toggleNavDropdown(){var menu=document.getElementById("navDropdown");menu.classList.toggle("show");}
+document.addEventListener("click",function(e){var menu=document.getElementById("navDropdown");var toggle=document.querySelector(".nav-toggle");if(menu&&toggle&&!menu.contains(e.target)&&!toggle.contains(e.target)){menu.classList.remove("show");}});
+</script>
+</head>
+<body>
+<nav aria-label="Main navigation">
+  <a href="./index.html" aria-label="Foundation Lineman Home"><img class="nav-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman logo" onerror="this.style.display='none'" /></a>
+  <ul class="nav-links" id="desktopNav"><li><a href="./index.html">Home</a></li><li><a href="./about.html">About the Coach</a></li><li><a href="./results.html">Proven Results</a></li><li><a href="./scheduling.html">Scheduling</a></li><li><a href="./services.html">Services</a></li><li><a href="./ambassadors.html">Ambassadors</a></li><li><a href="./merch.html" class="active">Merchandise</a></li><li><a href="./watch.html">Watch Us Work!</a></li><li><a href="./faq.html">FAQ</a></li></ul>
+  <div class="nav-dropdown">
+    <button class="nav-toggle" onclick="toggleNavDropdown()">&#9776;</button>
+    <ul class="dropdown-menu-list" id="navDropdown">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./about.html">About the Coach</a></li>
+      <li><a href="./results.html">Proven Results</a></li>
+      <li><a href="./scheduling.html">Scheduling</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="./ambassadors.html">Ambassadors</a></li>
+      <li><a href="./merch.html">Merchandise</a></li>
+      <li><a href="./watch.html">Watch Us Work!</a></li>
+      <li><a href="./faq.html">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section class="merch-hero">
+    <h1>MERCHANDISE</h1>
+    <p class="subhead">Foundation Lineman Clothing Collection</p>
+    <p class="merch-note">After purchase, you'll be sent a form to select size and other options.</p>
+  </section>
+
+  <section class="merch-grid" aria-label="Merchandise">
+
+    <div class="merch-card">
+      <img src="images/merch-1.jpg" alt="Foundation Lineman Poly Shirt">
+      <h3>Poly Shirt</h3>
+      <p class="merch-desc">Poly blend short sleeve with the FL logo on the left chest.</p>
+      <p class="merch-price">$20.00</p>
+      <a href="https://buy.stripe.com/00w9AS20G4GS3Tu2EUcZa0A" class="merch-btn" target="_blank" rel="noopener">Buy Now</a>
+    </div>
+
+    <div class="merch-card">
+      <img src="images/merch-2.jpg" alt="Foundation Lineman Cotton Blend Long Sleeve">
+      <h3>Cotton Blend Long Sleeve</h3>
+      <p class="merch-desc">Custom cut cotton blend long sleeve with "The Foundation" lettering on the sleeve and FL logo on the left chest.</p>
+      <p class="merch-price">$40.00</p>
+      <a href="https://buy.stripe.com/8x2bJ0axc1uG1Lm5R6cZa0z" class="merch-btn" target="_blank" rel="noopener">Buy Now</a>
+    </div>
+
+    <div class="merch-card">
+      <img src="images/merch-3.jpg" alt="Foundation Lineman Cotton Blend Sweatpants">
+      <h3>Cotton Blend Sweatpants</h3>
+      <p class="merch-desc">Custom cut cotton blend sweatpants with the FL logo on the left thigh.</p>
+      <p class="merch-price">$40.00</p>
+      <a href="https://buy.stripe.com/dRmcN4bBgflw1Lm2EUcZa0y" class="merch-btn" target="_blank" rel="noopener">Buy Now</a>
+    </div>
+
+    <div class="merch-card">
+      <img src="images/merch-5.jpg" alt="Foundation Lineman Long Sleeve No Lettering">
+      <h3>Long Sleeve (No Lettering)</h3>
+      <p class="merch-desc">Poly blend long sleeve with the FL logo on the left chest only.</p>
+      <p class="merch-price">$25.00</p>
+      <a href="https://buy.stripe.com/9B600idJo5KW2Pq4N2cZa0x" class="merch-btn" target="_blank" rel="noopener">Buy Now</a>
+    </div>
+
+    <div class="merch-card">
+      <img src="images/merch-4.jpg" alt="Foundation Lineman Poly Long Sleeve">
+      <h3>Poly Long Sleeve</h3>
+      <p class="merch-desc">Poly blend long sleeve with "The Foundation" lettering on the sleeve and FL logo on the left chest.</p>
+      <p class="merch-price">$25.00</p>
+      <a href="https://buy.stripe.com/9B600idJo5KW2Pq4N2cZa0x" class="merch-btn" target="_blank" rel="noopener">Buy Now</a>
+    </div>
+
+  </section>
+</main>
+
+<footer><div><img class="footer-logo" src="https://images.squarespace-cdn.com/content/v1/6882c9e5b6a39f28a79f3a8c/fb2c5a1d-7c10-4ba2-9fc9-4aaadbb62364/output-onlinepngtools.png?format=300w" alt="Foundation Lineman" onerror="this.style.display='none'" /></div><div class="footer-col"><h3>Contact</h3><a id="merch-footer-email" href="#" class="cf-email-fix"></a><a href="tel:+15404268544">540-426-8544</a></div><div class="footer-col"><h3>Quick Links</h3><a href="./index.html">Home</a><a href="./results.html">Proven Results</a><a href="./scheduling.html">Scheduling</a><a href="./about.html">About</a></div></footer>
+<div class="footer-bottom">&copy; 2025 Foundation Lineman. All rights reserved.</div>
+<script>
+(function(){
+  var u="foundationlineman",d="gmail.com",e=u+"@"+d;
+  document.querySelectorAll(".cf-email-fix").forEach(function(el){
+    el.href="mailto:"+e;
+    el.textContent=e;
+  });
+})();
+</script>
+</body>
+</html>

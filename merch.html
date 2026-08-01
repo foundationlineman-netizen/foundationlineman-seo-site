@@ -32,13 +32,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.97
 .merch-hero h1 span{color:var(--gold)}
 .merch-hero .subhead{color:rgba(255,255,255,.6);margin-top:1rem;font-size:15px}
 .merch-hero .merch-note{color:var(--gold);font-size:13px;margin-top:.75rem}
-.merch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1100px;margin:0 auto;padding:60px 3rem 100px}
-.merch-card{background:var(--black);border:1px solid rgba(200,168,75,.35);border-radius:4px;padding:16px;display:flex;flex-direction:column}
-.merch-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:4px;margin-bottom:14px;background:#1a1a1a}
-.merch-card h3{color:var(--white);font-size:1.05rem;margin-bottom:6px}
-.merch-desc{font-size:.85rem;color:rgba(255,255,255,.55);margin-bottom:10px;flex-grow:1;line-height:1.6}
-.merch-price{color:var(--gold);font-weight:bold;margin-bottom:12px}
-.merch-btn{display:block;text-align:center;padding:11px 0;background:var(--gold);color:var(--black);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:3px;transition:background .2s}
+.merch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:36px;max-width:1400px;margin:0 auto;padding:60px 3rem 120px}
+.merch-card{background:var(--black);border:1px solid rgba(200,168,75,.35);border-radius:6px;padding:24px;display:flex;flex-direction:column}
+.merch-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:6px;margin-bottom:20px;background:#1a1a1a}
+.merch-card h3{color:var(--white);font-size:1.4rem;margin-bottom:10px}
+.merch-desc{font-size:.95rem;color:rgba(255,255,255,.55);margin-bottom:16px;flex-grow:1;line-height:1.7}
+.merch-price{color:var(--gold);font-weight:bold;font-size:1.15rem;margin-bottom:18px}
+.merch-btn{display:block;text-align:center;padding:15px 0;background:var(--gold);color:var(--black);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:background .2s}
 .merch-btn:hover{background:var(--gold-light)}
 footer{background:var(--black);padding:56px 3rem 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px}
 .footer-logo{height:38px;filter:brightness(0) invert(1);object-fit:contain}
@@ -83,7 +83,7 @@ document.addEventListener("click",function(e){var menu=document.getElementById("
   <section class="merch-grid" aria-label="Merchandise">
 
     <div class="merch-card">
-      <img src="images/merch-1.jpg" alt="Foundation Lineman Poly Shirt">
+      <img src="merch-1.jpg" alt="Foundation Lineman Poly Shirt">
       <h3>Poly Shirt</h3>
       <p class="merch-desc">Poly blend short sleeve with the FL logo on the left chest.</p>
       <p class="merch-price">$20.00</p>
@@ -91,7 +91,7 @@ document.addEventListener("click",function(e){var menu=document.getElementById("
     </div>
 
     <div class="merch-card">
-      <img src="images/merch-2.jpg" alt="Foundation Lineman Cotton Blend Long Sleeve">
+      <img src="merch-2.jpg" alt="Foundation Lineman Cotton Blend Long Sleeve">
       <h3>Cotton Blend Long Sleeve</h3>
       <p class="merch-desc">Custom cut cotton blend long sleeve with "The Foundation" lettering on the sleeve and FL logo on the left chest.</p>
       <p class="merch-price">$40.00</p>
@@ -99,7 +99,7 @@ document.addEventListener("click",function(e){var menu=document.getElementById("
     </div>
 
     <div class="merch-card">
-      <img src="images/merch-3.jpg" alt="Foundation Lineman Cotton Blend Sweatpants">
+      <img src="merch-3.jpg" alt="Foundation Lineman Cotton Blend Sweatpants">
       <h3>Cotton Blend Sweatpants</h3>
       <p class="merch-desc">Custom cut cotton blend sweatpants with the FL logo on the left thigh.</p>
       <p class="merch-price">$40.00</p>
@@ -107,17 +107,9 @@ document.addEventListener("click",function(e){var menu=document.getElementById("
     </div>
 
     <div class="merch-card">
-      <img src="images/merch-5.jpg" alt="Foundation Lineman Long Sleeve No Lettering">
-      <h3>Long Sleeve (No Lettering)</h3>
-      <p class="merch-desc">Poly blend long sleeve with the FL logo on the left chest only.</p>
-      <p class="merch-price">$25.00</p>
-      <a href="https://buy.stripe.com/9B600idJo5KW2Pq4N2cZa0x" class="merch-btn" target="_blank" rel="noopener">Buy Now</a>
-    </div>
-
-    <div class="merch-card">
-      <img src="images/merch-4.jpg" alt="Foundation Lineman Poly Long Sleeve">
+      <img src="merch-4.jpg" alt="Foundation Lineman Poly Long Sleeve">
       <h3>Poly Long Sleeve</h3>
-      <p class="merch-desc">Poly blend long sleeve with "The Foundation" lettering on the sleeve and FL logo on the left chest.</p>
+      <p class="merch-desc">Poly blend long sleeve with the FL logo on the left chest. Optional "The Foundation" sleeve lettering.</p>
       <p class="merch-price">$25.00</p>
       <a href="https://buy.stripe.com/9B600idJo5KW2Pq4N2cZa0x" class="merch-btn" target="_blank" rel="noopener">Buy Now</a>
     </div>
